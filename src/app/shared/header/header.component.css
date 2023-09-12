@@ -1,0 +1,109 @@
+/** -------------- Zona superior --- Header ------------- **/
+
+header {
+  background: radial-gradient(
+    circle,
+    var(--color1),
+    var(--color2),
+    var(--color3),
+    var(--color4),
+    var(--color5)
+  );
+
+  height: 8vw;
+  max-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+header h1 {
+  width: 100%;
+  text-align: left;
+  margin-left: 5rem;
+}
+header h1 a {
+  text-decoration: none;
+  color: var(--colorLetra1);
+}
+
+.login {
+  width: 120px;
+  min-width: 120px;
+  height: 45%;
+  transition: 0.3s;
+}
+.login a {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+.login a ion-icon {
+  font-size: 2rem;
+  color: var(--colorLetra1);
+}
+.login a p {
+  text-align: left;
+  margin-left: 0.5rem;
+  color: var(--colorLetra1);
+  align-self: center;
+}
+.login:hover,
+.login:hover::before {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.iconosDarkMode {
+  display: flex;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+}
+.iconosDarkMode:hover {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.iconoDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconosDarkMode .iconoDark ion-icon {
+  font-size: 1.2rem;
+  color: var(--colorLetra4);
+}
+.oculto {
+  display: none;
+}
+
+@media (max-width: 630px) {
+  header {
+    height: 8vh;
+  }
+  header h1 {
+    margin-left: 2rem;
+  }
+
+  .login {
+    height: 50%;
+    width: 35px;
+    min-width: 35px;
+  }
+  .login a {
+    height: 100%;
+  }
+  .login a p {
+    display: none;
+  }
+}

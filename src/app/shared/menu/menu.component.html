@@ -1,1 +1,50 @@
-<p>menu works!</p>
+<div class="menu buscarActive">
+  <div class="categorias">
+    <ul class="categorias-ul">
+      <li *ngFor="let category of categories">
+        <a href="">
+          {{category}}
+        </a>
+      </li>
+      <!-- <li><a href="../html/categoria.html?cat=men">men's clothing</a></li> -->
+    </ul>
+  </div>
+  <div class="buscar active">
+    <input type="text" class="input" placeholder="Find your next purchase..." />
+    <button class="btn-buscar">
+      <!-- <ion-icon name="search-outline"></ion-icon> -->
+    </button>
+  </div>
+  <div class="carrito">
+    <a href="../html/carrito.html" class="btn-carrito">
+      <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
+      <span class="badge oculto"></span>
+    </a>
+  </div>
+</div>
+
+<!--           **************************************         -->
+<!--           **************************************         -->
+<!--           ************   SECCIÓN  **************         -->
+<!--           **************************************         -->
+<!--           **************************************         -->
+
+<div class="menuDesplegable">
+  <div class="desplegarBoton">
+    <!-- <ion-icon name="ellipsis-horizontal-outline"></ion-icon> -->
+  </div>
+  <div class="menuDesplegado oculto">
+    <div class="categoriasDesplegable">
+      <ul class="categorias-ul"></ul>
+    </div>
+    <div class="buscarDesplegable">
+      <input type="text" class="input" placeholder="Find your next purchase..." />
+    </div>
+    <div class="carritoDesplegable">
+      <a href="../html/carrito.html" class="btn-carritoDesplegable">
+        <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
+        <span class="badgeDesplegable oculto"></span>
+      </a>
+    </div>
+  </div>
+</div>

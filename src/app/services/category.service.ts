@@ -5,5 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class CategoryService {
 
+  private categories :string[] =[
+    "electronics",
+    "jewelery",
+    "men's clothing",
+    "women's clothing"
+    ]
+
   constructor() { }
+
+  getCategories():string[] {
+    return this.categories;
+   }
 }
