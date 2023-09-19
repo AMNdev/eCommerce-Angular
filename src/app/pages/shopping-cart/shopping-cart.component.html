@@ -1,0 +1,58 @@
+
+<div class="grid-area">
+  <div class="lista">
+    <div class="encabezado">
+      <h2>Productos en tu cesta</h2>
+      <p id="totalProductosDom"></p>
+    </div>
+
+    <div class="relacion-productos">
+      <div class="producto" *ngFor="let item of cart" >
+        <div class="imagen-producto">
+          <img
+            [src]="item.image"
+            [alt]="item.title"
+          />
+        </div>
+
+        <div class="info-producto">
+          <div class="detalles">
+            <div class="name" >{{item.title}}</div>
+            <div class="info">{{item.description}}
+            </div>
+          </div>
+          <div class="numeros">
+            <div class="price">${{item.price}}</div>
+            <input type="number" name="cantidad" id="cantidad" value="1" />
+            <p>Total</p>
+            <div class="total">$545</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="resumen">
+    <div class="resumen-productos">
+      <h3 class="titulo">Resumen de Pedido</h3>
+
+      <div class="resumen-lista">
+        <!-- <div class="resumen-item">
+        <div class="resumen-name">WASHING MACHINE</div>
+        <div class="resumen-cantidad">2</div>
+        <div class="resumen-total">$150</div>
+      </div>-->
+      </div>
+
+      <div class="resumen-final">
+        <h3>Total</h3>
+        <div class="total-final"></div>
+      </div>
+    </div>
+
+    <div class="resumen-comprar">
+      <button class="comprar-btn">Comprar ahora</button>
+      <button class="comprar-btn eliminar">Eliminar productos</button>
+    </div>
+  </div>
+</div>

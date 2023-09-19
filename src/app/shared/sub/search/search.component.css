@@ -1,0 +1,73 @@
+.buscar {
+  display: flex;
+  flex: 1;
+  position: relative;
+  height: 100%;
+  display: flex;
+  transition: all 0.5s ease;
+}
+.buscar:hover .btn-buscar img {
+  rotate: -20deg;
+}
+
+.buscar .input {
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+
+  /* padding: 1rem; */
+  height: 80%;
+  width: 50px;
+  align-self: center;
+  border-radius: 5px;
+  transform: 0.3s ease;
+  transition: width 0.3s ease;
+  background-color: var(--colorFondoBuscar);
+  color: var(--colorLetraBuscar);
+}
+.buscar .input:focus {
+  outline: none;
+}
+
+.btn-buscar {
+
+  background-color: var(--colorFondo3);
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-buscar img {
+  /* color: var(--colorLetra1); */
+  color: green;
+
+  transition: rotate 0.3s ease;
+  height: 70%;
+  width: 70%;
+}
+
+
+
+.buscar.buscarActive .btn-buscar {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 10%;
+  transform: 0.3s ease;
+}
+.buscar.buscarActive .input {
+  width: 90%;
+}
+.buscar .input::placeholder {
+  border: 0;
+  color: var(--colorLetra4);
+  font-style: italic;
+}

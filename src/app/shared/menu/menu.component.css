@@ -6,6 +6,7 @@
   background: var(--colorFondo3);
   width: 100%;
   height: 5vw;
+  min-height: 50px;
   max-height: 70px;
   display: flex;
   flex-direction: row;
@@ -13,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .menu .categorias {
   height: 100%;
   text-align: center;
@@ -20,6 +22,7 @@
   margin-right: 2px;
   transition: flex 0.5s ease;
 }
+
 .menu .categorias ul {
   width: 100%;
   height: 100%;
@@ -29,11 +32,13 @@
   overflow: hidden;
   display: flex;
 }
+
 .menu .categorias li {
   height: 100%;
   width: 25%;
   display: flex;
 }
+
 .menu .categorias li a {
   width: 100%;
   color: var(--colorLetra2);
@@ -44,84 +49,36 @@
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
+
 .menu .categorias li a:hover {
   background-color: var(--colorFondo4);
   color: var(--colorLetra2);
   border-radius: 5px;
 }
+
 /* **************************** ****** *************************** */
 /* **************************** Buscar *************************** */
 /* **************************** ****** *************************** */
 
-.buscar {
-  flex: 1;
-  position: relative;
-  height: 100%;
-  display: flex;
-  transition: all 0.5s ease;
-}
 
-.buscar:hover ion-icon {
-  rotate: -20deg;
-}
-.buscar .input {
-  border: none;
-  font-size: 1rem;
-  padding: 1rem;
-  height: 80%;
-  width: 50px;
-  align-self: center;
-  border-radius: 5px;
-  transform: 0.3s ease;
-  transition: width 0.3s ease;
-  background-color: var(--colorFondoBuscar);
-  color: var(--colorLetraBuscar);
-}
-.buscar .input:focus {
-  outline: none;
-}
-.buscar .input::placeholder {
-  border: 0;
-  color: var(--colorLetra4);
-  font-style: italic;
-}
-.btn-buscar {
-  background-color: var(--colorFondo3);
-  border: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn-buscar ion-icon {
-  color: var(--colorLetra1);
-  height: 70%;
-  width: 70%;
-  transition: rotate 0.3s ease;
-}
-.buscar.active .input {
-  width: 90%;
-}
 .menu.buscarActive .categorias {
   flex: 6;
 }
-.menu.buscarActive .buscar {
+/*
+.menu.buscarActive app-search {
   flex: 6;
-}
-.menu.buscarActive .btn-buscar {
+} */
+
+
+
+/* .menu.buscarActive .btn-buscar {
   cursor: pointer;
   position: relative;
   top: 0;
   right: 0;
   width: 10%;
   transform: 0.3s ease;
-}
+} */
 
 /* **************************** ****** *************************** */
 /* **************************** CARRITO ************************** */
@@ -146,14 +103,14 @@
   position: relative;
 }
 
-.btn-carrito ion-icon {
+.btn-carrito img {
   color: var(--colorLetra1);
   height: 70%;
   width: 70%;
   transition: rotate 0.3s ease;
 }
 
-.btn-carrito:hover ion-icon {
+.btn-carrito:hover img {
   rotate: 15deg;
 }
 
@@ -174,6 +131,7 @@
   font-weight: bold;
 
 }
+
 .btn-carrito .badge.oculto {
   display: none;
 }
@@ -188,7 +146,7 @@
 
 @media (max-width: 700px) {
   .menu {
-    flex-wrap: wrap;
+    flex-wrap: nwrap;
   }
 
   .menu .categorias li a {
@@ -198,12 +156,15 @@
   .btn-buscar img {
     padding: 0.5rem;
   }
+
   .buscar.active .input {
     width: 80%;
   }
+
   .menu.buscarActive .categorias {
     flex: 4;
   }
+
   .menu.buscarActive .buscar {
     flex: 5;
   }
@@ -230,6 +191,7 @@
     justify-content: center;
     overflow: hidden;
   }
+
   .desplegarBoton ion-icon {
     font-size: 2rem;
   }
@@ -269,6 +231,7 @@
     visibility: visible;
     transition: visibility 1s ease;
   }
+
   .menuDesplegado.oculto {
     display: none;
     visibility: hidden;
@@ -280,6 +243,7 @@
     display: flex;
     justify-content: center;
   }
+
   .buscarDesplegable input {
     width: 100%;
     border: none;
@@ -295,6 +259,7 @@
   .buscarDesplegable input:focus {
     outline: none;
   }
+
   .buscarDesplegable input::placeholder {
     border: 0;
     font-size: 0.7rem;
@@ -338,6 +303,7 @@
     padding: 2px;
     font-size: 0.6rem;
   }
+
   .btn-carritoDesplegable .badgeDesplegable.oculto {
     display: none;
   }

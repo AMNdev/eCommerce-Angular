@@ -1,27 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AsideComponent } from './aside/aside.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
-
-
+import { DarkModeComponent } from './sub/dark-mode/dark-mode.component';
+import { SearchComponent } from './sub/search/search.component';
 
 @NgModule({
   declarations: [
     AsideComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    DarkModeComponent,
+    SearchComponent,
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    FormsModule],
   exports: [
     HeaderComponent,
     AsideComponent,
     FooterComponent,
-    MenuComponent
-  ]
+    MenuComponent,
+    DarkModeComponent,
+    SearchComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

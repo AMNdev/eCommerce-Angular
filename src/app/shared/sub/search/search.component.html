@@ -1,0 +1,24 @@
+<div
+  class="buscar"
+  (ngSubmit)="search()"
+  [ngClass]="{'buscarActive': biggerInput}">
+
+  <input
+   type="text"
+    class="input"
+    placeholder="Find your next purchase..."
+    (keyup.enter)="search()"
+    #txtSearchInput
+    name="searchInput"
+  />
+
+  <button
+   type="button"
+   class="btn-buscar"
+   (click)="focusOnSearch()"
+  >
+    <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/search-outline.svg" alt="">
+    <!-- <ion-icon name="search-outline"></ion-icon> -->
+  </button>
+
+</div>

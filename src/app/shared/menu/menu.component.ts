@@ -4,19 +4,20 @@ import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
-
-  categories:string[] =[]
+  categories: string[] = [];
+  isSearchActive: boolean = false;
   constructor(categoryService: CategoryService) {
-
-    this.categories= categoryService.getCategories()
+    this.categories = categoryService.getCategories();
+    // this.isSearchActive = true;
   }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-  }
 
+
+  changeClass(event: boolean): void {
+    // console.log(event);
+    this.isSearchActive = event;
+  }
 }

@@ -1,0 +1,27 @@
+
+.iconosDarkMode {
+  display: flex;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.iconosDarkMode:hover {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.iconoDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconosDarkMode .iconoDark img {
+  width: 1.2rem;
+  font-size: 1.2rem;
+  color: var(--colorLetra4);
+}
+.oculto {
+  display: none;
+}

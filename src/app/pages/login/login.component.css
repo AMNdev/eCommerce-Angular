@@ -1,0 +1,43 @@
+.form {
+  padding: 4rem 0;
+}
+
+/* TODO: añadir sombras, bordes... hacer más bonito el formulario */
+
+.form form {
+  /* width: 50%; */
+  min-width: 200px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--colorLetra1);
+}
+
+.form input {
+  margin: 1rem;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+.form button {
+  margin: 2rem;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+
+.ng-valid[required], .ng-valid.required  {
+  background: rgba(0, 128, 0, 0.116);
+}
+
+.ng-invalid:not(form)  {
+  background: rgba(255, 0, 0, 0.151);
+}

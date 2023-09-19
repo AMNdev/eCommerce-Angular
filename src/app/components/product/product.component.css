@@ -1,0 +1,113 @@
+.producto-card {
+  margin: auto auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:root{
+  --colorBoton1: var(--color4);
+  --colorBoton2: var(--color3);
+  --colorLetraBoton: #fafbfb;
+
+}
+
+.producto-img,
+.producto-info {
+  flex: 1;
+}
+
+.producto-imagen {
+  width: 90%;
+  height: 90%;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 24px -6px var(--color4);
+}
+
+.producto-info #nombre {
+  font-size: 3rem;
+}
+.producto-info #categoria {
+  text-align: left;
+}
+.producto-info #precio {
+  text-align: right;
+  font-size: 1.5rem;
+}
+.producto-info #descripcion {
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+.producto-info #rating {
+  text-align: center;
+  padding: 1rem;
+}
+
+.add-carrito{
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--colorBoton1);
+  background-color: var(--colorBoton2);
+  font-family: inherit;
+  border-radius: 2px;
+  /* letter-spacing: 1px; */
+}
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+.button .button__text {
+  transform: translateX(10px);
+  color: var(--colorLetraBoton);
+  font-size: 1.1rem;
+}
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--colorBoton1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button .svg {
+  width: 30px;
+  stroke: var(--colorLetraBoton);
+}
+.button:hover {
+  background: var(--colorBoton1);
+}
+.button:hover .button__text {
+  color: transparent;
+}
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+.button:active .button__icon {
+  background-color: var(--colorBoton2);
+}
+.button:active {
+  border: 1px solid var(--colorBoton2);
+}
+
+/* nombre categoria descripcion precio rating */
+
+@media (max-width: 750px) {
+  .producto-card {
+    flex-direction: column;
+  }
+}

@@ -32,6 +32,9 @@ footer ul li a {
   text-decoration: none;
   color: var(--colorLetra1);
 }
+footer .icono{
+  width: 30px;
+}
 footer ul li:hover .icono {
   scale: 1.4;
 }

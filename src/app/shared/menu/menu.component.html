@@ -1,22 +1,24 @@
-<div class="menu buscarActive">
+<div class="menu buscarActive"
+>
+<!-- [ngClass]="{'buscarActive': isSearchActive}" -->
   <div class="categorias">
     <ul class="categorias-ul">
       <li *ngFor="let category of categories">
-        <a href="">
+        <a href="#">
           {{category}}
         </a>
       </li>
       <!-- <li><a href="../html/categoria.html?cat=men">men's clothing</a></li> -->
     </ul>
   </div>
-  <div class="buscar active">
-    <input type="text" class="input" placeholder="Find your next purchase..." />
-    <button class="btn-buscar">
-      <!-- <ion-icon name="search-outline"></ion-icon> -->
-    </button>
-  </div>
+
+    <app-search (isSearchActive)="changeClass($event)"  ></app-search>
+
+
   <div class="carrito">
-    <a href="../html/carrito.html" class="btn-carrito">
+    <a href="#" class="btn-carrito">
+      <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
+
       <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
       <span class="badge oculto"></span>
     </a>

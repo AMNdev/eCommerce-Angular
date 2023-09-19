@@ -1,0 +1,11 @@
+<div class="iconosDarkMode" (click)="toggleDarkMode()" >
+  <div class="iconoDark" [ngClass]="{'oculto': isDarkMode}" >
+    <img src="../../../assets/svg/moon-sharp.svg" alt="">
+    <!-- <ion-icon name="moon"></ion-icon> -->
+  </div>
+  <div class="iconoDark "  [ngClass]="{'oculto': !isDarkMode}" >
+    <img src="../../../assets/svg/sunny-sharp.svg" alt="">
+
+    <!-- <ion-icon name="sunny"></ion-icon> -->
+  </div>
+</div>
