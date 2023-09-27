@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input } from '@angular/core';
+import { Component, DoCheck,  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from 'src/app/services/products.service';
@@ -30,11 +30,13 @@ export class MainComponent implements DoCheck {
     const cat: string = this.route.snapshot.params['cat'] || '';
 
     this.allProducts = cat
-      ? this.productsService.getProductsByCategroy(cat)
+      ? this.productsService.getProductsByCategory(cat)
       : this.productsService.getAllProducts();
     // console.log('check', {cat}, this.activeCategory);
 
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
   }
+
+
 }

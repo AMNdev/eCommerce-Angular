@@ -5,7 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-search',
@@ -20,19 +20,27 @@ export class SearchComponent {
   isSearchActive = new EventEmitter<boolean>();
   biggerInput: boolean = false;
 
-  constructor() {}
+  constructor(private productService: ProductsService) {}
 
   search() {
     const term = this.searchInput.nativeElement.value;
     console.log(`Searching...${term}`)
     this.changeInputVisibility();
-    // TODO: Crear searchService y enlazar aquí
+
+    const results = this.productService.searchProduct(term);
+
+
+    console.log({results})
+
+
+
+    // TODO: enviar resultados de busqueda al componente para mostrar
   }
 
   focusOnSearch() {
     if (this.biggerInput) return this.search()
 
-    
+
     this.searchInput.nativeElement.value = '';
     this.searchInput.nativeElement.focus();
 

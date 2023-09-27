@@ -292,13 +292,20 @@ export class ProductsService {
     return this.products;
   }
 
-  getProductsByCategroy(category: string) {
-    return this.products.filter((element) => element.category == category)
+  getProductsByCategory(category: string) {
+    return this.products.filter((element) => element.category == category);
   }
 
   getProductById(id: number): Product {
     const oneProduct = this.products.find((element) => element.id == id);
 
     return oneProduct || this.voidProduct;
+  }
+
+  searchProduct(term: string) {
+    const search = this.products.filter((item) => {
+      return JSON.stringify(item).toLowerCase().includes(term.toLowerCase());
+    });
+    return search.length >0? search : []
   }
 }
