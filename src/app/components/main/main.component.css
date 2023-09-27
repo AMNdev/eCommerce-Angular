@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.main .items {
+/* .main .items {
   overflow: hidden;
   margin: 10px;
   width: 200px;
@@ -14,7 +14,19 @@
   background-color: var(--colorFondo1);
   border: 2.5px solid black;
   border-radius: 12px;
-}
+  cursor: pointer;
+} */
+/*
+.main .items {
+  margin: 15px;
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+} */
+/*
 .main .items a {
   text-decoration: none;
 }
@@ -50,7 +62,7 @@
   padding: 0;
   border-radius: 12px;
   transition-duration: 0.8s;
-}
+} */
 
 /* efecto aumento de la imagen */
 /* .main .items:hover .img img {

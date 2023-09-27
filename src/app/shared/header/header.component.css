@@ -27,6 +27,7 @@ header h1 {
 header h1 a {
   text-decoration: none;
   color: var(--colorLetra1);
+  cursor: pointer;
 }
 
 .login {
@@ -36,6 +37,7 @@ header h1 a {
   transition: 0.3s;
 }
 .login a {
+  cursor: pointer;
   height: 100%;
   display: flex;
   flex-direction: row;

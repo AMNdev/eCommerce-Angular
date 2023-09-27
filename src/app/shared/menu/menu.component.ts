@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -7,6 +7,10 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent {
+
+  @Output()
+  currentCategory = new EventEmitter<string>();
+
   categories: string[] = [];
   isSearchActive: boolean = false;
   constructor(categoryService: CategoryService) {
@@ -14,6 +18,11 @@ export class MenuComponent {
     // this.isSearchActive = true;
   }
 
+  // onNewCategory(category: string) {
+  //   this.currentCategory.emit(category)
+  //   console.log('emitiendo', category)
+
+  // }
 
 
   changeClass(event: boolean): void {

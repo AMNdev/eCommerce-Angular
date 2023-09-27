@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { DarkModeComponent } from './sub/dark-mode/dark-mode.component';
 import { SearchComponent } from './sub/search/search.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SearchComponent } from './sub/search/search.component';
     SearchComponent,
   ],
   imports: [
+    AppRoutingModule,
     CommonModule,
     FormsModule],
   exports: [

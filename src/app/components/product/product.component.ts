@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from '../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   currentProduct!: Product;
 
-  constructor(productService: ProductsService) {
-    this.currentProduct = productService.getProductById(10);
+  constructor(
+    private productService: ProductsService,
+    private route: ActivatedRoute
+  ) {}
 
-
+  ngOnInit(): void {
+    const _id : number = this.route.snapshot.params['id'];
+    this.currentProduct = this.productService.getProductById(_id)
   }
-
-  // TODO: este componente necesita recibir el ID, sea por parametros de la dirección, sea por comunicación entre componentes.
 }

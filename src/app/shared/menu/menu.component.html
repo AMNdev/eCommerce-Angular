@@ -4,11 +4,11 @@
   <div class="categorias">
     <ul class="categorias-ul">
       <li *ngFor="let category of categories">
-        <a href="#">
+        <a [routerLink]="['/category', category]"
+        >
           {{category}}
         </a>
       </li>
-      <!-- <li><a href="../html/categoria.html?cat=men">men's clothing</a></li> -->
     </ul>
   </div>
 
@@ -16,7 +16,7 @@
 
 
   <div class="carrito">
-    <a href="#" class="btn-carrito">
+    <a routerLink="/cart" class="btn-carrito">
       <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
 
       <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
@@ -33,6 +33,7 @@
 
 <div class="menuDesplegable">
   <div class="desplegarBoton">
+    <img src="../../../assets/svg/ellipsis-horizontal-outline.svg" alt="">
     <!-- <ion-icon name="ellipsis-horizontal-outline"></ion-icon> -->
   </div>
   <div class="menuDesplegado oculto">

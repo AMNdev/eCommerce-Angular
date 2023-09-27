@@ -1,0 +1,52 @@
+.card {
+  margin: 15px;
+  width: 200px;
+  height: 300px;
+  background: var(--colorFondo1);
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px -10px #ffffff;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card .name {
+  text-align: center;
+  background-color: var(--colorFondo2);
+  height: 25px;
+  padding-top: 4px;
+  color: var(--colorLetra3);
+  margin: 0;
+  overflow: hidden;
+}
+
+.card .price {
+  float: left;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  color: var(--colorLetra2);
+  font-weight: 650;
+}
+
+.card .info {
+  padding-left: 10px;
+  color: var(--colorLetra1);
+}
+
+.card .img {
+  overflow: hidden;
+  margin: 0;
+}
+
+.card .img img {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  transition-duration: 0.8s;
+}

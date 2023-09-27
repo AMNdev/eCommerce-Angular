@@ -292,6 +292,10 @@ export class ProductsService {
     return this.products;
   }
 
+  getProductsByCategroy(category: string) {
+    return this.products.filter((element) => element.category == category)
+  }
+
   getProductById(id: number): Product {
     const oneProduct = this.products.find((element) => element.id == id);
 

@@ -192,8 +192,8 @@
     overflow: hidden;
   }
 
-  .desplegarBoton ion-icon {
-    font-size: 2rem;
+  .desplegarBoton img {
+    width: 10%;
   }
 
   .categoriasDesplegable {
