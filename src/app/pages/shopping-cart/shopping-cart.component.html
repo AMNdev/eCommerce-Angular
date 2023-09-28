@@ -10,22 +10,22 @@
       <div class="producto" *ngFor="let item of cart" >
         <div class="imagen-producto">
           <img
-            [src]="item.image"
-            [alt]="item.title"
+            [src]="item.product.image"
+            [alt]="item.product.title"
           />
         </div>
 
         <div class="info-producto">
           <div class="detalles">
-            <div class="name" >{{item.title}}</div>
-            <div class="info">{{item.description}}
+            <div class="name" >{{item.product.title}}</div>
+            <div class="info">{{item.product.description}}
             </div>
           </div>
           <div class="numeros">
-            <div class="price">${{item.price}}</div>
-            <input type="number" name="cantidad" id="cantidad" value="1" />
+            <div class="price">{{item.product.price |currency:'EUR'}}</div>
+            <input type="number" name="cantidad" id="cantidad" [(ngModel)]="item.quantity" (change)="modifyQuantity()" />
             <p>Total</p>
-            <div class="total">$545</div>
+            <div class="total">{{item.product.price * item.quantity | currency:'EUR'}}</div>
           </div>
         </div>
       </div>
@@ -37,22 +37,24 @@
       <h3 class="titulo">Resumen de Pedido</h3>
 
       <div class="resumen-lista">
-        <!-- <div class="resumen-item">
-        <div class="resumen-name">WASHING MACHINE</div>
-        <div class="resumen-cantidad">2</div>
-        <div class="resumen-total">$150</div>
-      </div>-->
+        <h4>
+          {{totalProducts}} productos
+        </h4>
+        <h4>
+          {{totalNumberOfItems}} unidades
+        </h4>
+
       </div>
 
       <div class="resumen-final">
         <h3>Total</h3>
-        <div class="total-final"></div>
+        <div class="total-final">{{totalSum | currency: 'EUR'}}</div>
       </div>
     </div>
 
     <div class="resumen-comprar">
-      <button class="comprar-btn">Comprar ahora</button>
-      <button class="comprar-btn eliminar">Eliminar productos</button>
+      <button class="comprar-btn" (click)="shopNow()" >Comprar ahora</button>
+      <button class="comprar-btn eliminar" (click)="deleteAll()" >Eliminar productos</button>
     </div>
   </div>
 </div>

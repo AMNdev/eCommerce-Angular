@@ -126,6 +126,11 @@
   line-height: 37px;
 }
 
+.resumen-lista h4{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .resumen-productos .resumen-final {
   width: 90%;
   margin: 0 auto;
