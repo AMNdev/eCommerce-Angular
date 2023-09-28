@@ -1,5 +1,5 @@
-import { Component, DoCheck,  } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, DoCheck } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -11,20 +11,10 @@ import { ProductsService } from 'src/app/services/products.service';
 export class MainComponent implements DoCheck {
   allProducts: Product[] = [];
 
-  // @Input()
-  // activeCategory?: string;
-
   constructor(
     private productsService: ProductsService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
-
-  ngOnInit(): void {
-    // this.router.navigateByUrl(`/${cat}`, {skipLocationChange: true}).then(()=> this.router.navigate(['home']));
-    // this.allProducts = this.productsService.getAllProducts();
-    // this.currentProduct = this.productService.getProductById(this.id)
-  }
 
   ngDoCheck(): void {
     const cat: string = this.route.snapshot.params['cat'] || '';
@@ -32,11 +22,5 @@ export class MainComponent implements DoCheck {
     this.allProducts = cat
       ? this.productsService.getProductsByCategory(cat)
       : this.productsService.getAllProducts();
-    // console.log('check', {cat}, this.activeCategory);
-
-    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
-    //Add 'implements DoCheck' to the class.
   }
-
-
 }

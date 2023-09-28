@@ -5,6 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -20,26 +21,25 @@ export class SearchComponent {
   isSearchActive = new EventEmitter<boolean>();
   biggerInput: boolean = false;
 
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService,
+    private router: Router
+  ) {}
 
   search() {
     const term = this.searchInput.nativeElement.value;
-    console.log(`Searching...${term}`)
+    console.log(`Searching...${term}`);
     this.changeInputVisibility();
 
-    const results = this.productService.searchProduct(term);
+    
 
-
-    console.log({results})
-
-
+    this.router.navigateByUrl(`search/${term}`);
 
     // TODO: enviar resultados de busqueda al componente para mostrar
   }
 
   focusOnSearch() {
-    if (this.biggerInput) return this.search()
-
+    if (this.biggerInput) return this.search();
 
     this.searchInput.nativeElement.value = '';
     this.searchInput.nativeElement.focus();

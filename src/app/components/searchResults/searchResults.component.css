@@ -1,0 +1,12 @@
+
+.main, .productos-contenedor {
+  grid-area: main;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  margin: 70px;
+}

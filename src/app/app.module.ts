@@ -14,7 +14,9 @@ import { ProductComponent } from './components/product/product.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { CardComponent } from './components/card/card.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
-
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SearchComponent } from './shared/sub/search/search.component';
+import { SearchComponentComponent } from './components/searchResults/searchResults.component';
 
 @NgModule({
   declarations: [
@@ -25,18 +27,12 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     ProductComponent,
     ShoppingCartComponent,
     CardComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    SearchPageComponent,
+    SearchComponentComponent,
   ],
-  imports: [
-
-    SharedModule,
-    FormsModule,
-    BrowserModule,
-    AppRoutingModule,
-  ],
-  providers: [
-
-  ],
+  imports: [SharedModule, FormsModule, BrowserModule, AppRoutingModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
