@@ -70,7 +70,13 @@ Opción 3: Tonos claros sofisticados
   --colorLetra2: var(--color4);
   --colorLetra3: var(--color1);
   --colorLetra4: var(--color2);
+
+
+  --colorBoton1: var(--color4);
+  --colorBoton2: var(--color3);
+  --colorLetraBoton: #fafbfb;
 }
+
 
 * {
   margin: 0;

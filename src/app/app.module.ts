@@ -5,33 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { LoginComponent } from './pages/login/login.component';
-import { MainComponent } from './components/main/main.component';
-import { ProductComponent } from './components/product/product.component';
-import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import { CardComponent } from './components/card/card.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
-import { SearchComponent } from './shared/sub/search/search.component';
-import { SearchComponentComponent } from './components/searchResults/searchResults.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    LoginComponent,
-    MainComponent,
-    ProductComponent,
-    ShoppingCartComponent,
-    CardComponent,
-    ProductPageComponent,
-    SearchPageComponent,
-    SearchComponentComponent,
+
   ],
-  imports: [SharedModule, FormsModule, BrowserModule, AppRoutingModule],
+  imports: [
+    AppRoutingModule,
+    FormsModule,
+    BrowserModule,
+    PagesModule,
+    ComponentsModule,
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
