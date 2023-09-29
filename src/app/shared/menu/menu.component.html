@@ -20,7 +20,7 @@
       <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
 
       <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
-      <span class="badge oculto"></span>
+      <span class="badge " [ngClass]="{'oculto': !articlesNumber}" >{{articlesNumber}}</span>
     </a>
   </div>
 </div>

@@ -286,6 +286,8 @@ export class ProductsService {
     },
   };
 
+  public lastProductsSeen: Product[] = [];
+
   constructor() {}
 
   getAllProducts(): Product[] {
@@ -298,6 +300,10 @@ export class ProductsService {
 
   getProductById(id: number): Product {
     const oneProduct = this.products.find((element) => element.id == id);
+    // if (oneProduct) this.lastProductsSeen.push(oneProduct)
+
+    // console.log(this.lastProductsSeen)
+
 
     return oneProduct || this.voidProduct;
   }

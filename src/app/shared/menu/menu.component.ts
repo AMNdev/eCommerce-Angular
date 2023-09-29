@@ -1,32 +1,33 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent {
-
-  @Output()
-  currentCategory = new EventEmitter<string>();
-
+export class MenuComponent  implements OnInit {
   categories: string[] = [];
+  articlesNumber: number = 0;
   isSearchActive: boolean = false;
-  constructor(categoryService: CategoryService) {
+
+
+  constructor(
+    categoryService: CategoryService,
+    private cartService: ShoppingCartService
+  ) {
     this.categories = categoryService.getCategories();
-    // this.isSearchActive = true;
+    cartService.cartLengthEmitter.subscribe(
+      (num) => (this.articlesNumber = num)
+    );
   }
 
-  // onNewCategory(category: string) {
-  //   this.currentCategory.emit(category)
-  //   console.log('emitiendo', category)
-
-  // }
-
+  ngOnInit(): void {
+    this.cartService.refreshCartLength()
+  }
 
   changeClass(event: boolean): void {
-    // console.log(event);
     this.isSearchActive = event;
   }
 }

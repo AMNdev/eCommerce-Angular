@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { ShoppingCart } from '../interfaces/shopping-cart.interface';
 import { Product } from '../interfaces/product.interface';
 
@@ -7,20 +7,25 @@ import { Product } from '../interfaces/product.interface';
 })
 export class ShoppingCartService {
   private shoppingCart: ShoppingCart[];
+  public cartLengthEmitter = new EventEmitter<number>();
+
 
   constructor() {
     this.shoppingCart =
       JSON.parse(localStorage.getItem('ShoppingCart-eCommerceAngular')!) || [];
+
+    this.refreshCartLength();
   }
 
   getShoppingCart() {
     return this.shoppingCart;
   }
 
+
   setShoppingCart(newCart: ShoppingCart[]) {
     this.shoppingCart = newCart;
-    this.cartToLocalStorage()
-    console.log(this.shoppingCart)
+    this.cartToLocalStorage();
+    console.log(this.shoppingCart);
 
   }
 
@@ -34,6 +39,7 @@ export class ShoppingCartService {
       this.shoppingCart.push({ product, quantity: 1 });
     }
     this.cartToLocalStorage();
+
   }
 
   deleteProductFromCart(product: Product) {
@@ -41,21 +47,27 @@ export class ShoppingCartService {
       (el) => el.product.id == product.id
     );
     if (existingElementId >= 0) {
-      this.shoppingCart.splice(existingElementId,1)
+      this.shoppingCart.splice(existingElementId, 1);
     }
     this.cartToLocalStorage();
   }
 
   deleteAllProducts() {
-    this.shoppingCart = []
-    this.cartToLocalStorage()
-    alert('Your shopping chart is empty')
+    this.shoppingCart = [];
+    this.cartToLocalStorage();
+    alert('Your shopping chart is empty');
   }
 
+
   private cartToLocalStorage() {
+    this.refreshCartLength();
+
     localStorage.setItem(
       'ShoppingCart-eCommerceAngular',
       JSON.stringify(this.shoppingCart)
     );
+  }
+  refreshCartLength() {
+    this.cartLengthEmitter.emit(this.shoppingCart.length);
   }
 }
