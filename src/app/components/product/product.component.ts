@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     const _id : number = this.route.snapshot.params['id'];
     this.currentProduct = this.productService.getProductById(_id)
+    this.productService.refreshLastSeen(this.currentProduct)
   }
 
   addProduct() {

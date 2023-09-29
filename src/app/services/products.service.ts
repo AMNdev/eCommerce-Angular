@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
 
 @Injectable({
@@ -286,7 +286,8 @@ export class ProductsService {
     },
   };
 
-  public lastProductsSeen: Product[] = [];
+  private lastProductsSeen: Product[] = [];
+  public lastProductsEmitter = new EventEmitter<Product[]>();
 
   constructor() {}
 
@@ -304,14 +305,19 @@ export class ProductsService {
 
     // console.log(this.lastProductsSeen)
 
-
     return oneProduct || this.voidProduct;
+  }
+
+  refreshLastSeen(product: Product) {
+    this.lastProductsSeen.push(product);
+    // console.log(this.lastProductsSeen);
+    this.lastProductsEmitter.emit(this.lastProductsSeen)
   }
 
   searchProduct(term: string) {
     const search = this.products.filter((item) => {
       return JSON.stringify(item).toLowerCase().includes(term.toLowerCase());
     });
-    return search.length >0? search : []
+    return search.length > 0 ? search : [];
   }
 }

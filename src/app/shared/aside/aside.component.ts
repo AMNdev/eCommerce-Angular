@@ -11,8 +11,11 @@ export class AsideComponent {
   asideProducts: Product[] = [];
 
   constructor(productsService: ProductsService) {
-    for (let i = 0; i < 4; i++) {
-      this.asideProducts.push(productsService.getProductById(i + 1));
-    }
+    // for (let i = 0; i < 4; i++) {
+    //   this.asideProducts.push(productsService.getProductById(i + 1));
+    // }
+    productsService.lastProductsEmitter.subscribe(
+      (products) => (this.asideProducts = products)
+    );
   }
 }
