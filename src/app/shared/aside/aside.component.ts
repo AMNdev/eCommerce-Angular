@@ -14,8 +14,11 @@ export class AsideComponent {
     // for (let i = 0; i < 4; i++) {
     //   this.asideProducts.push(productsService.getProductById(i + 1));
     // }
+
     productsService.lastProductsEmitter.subscribe(
       (products) => (this.asideProducts = products)
     );
   }
 }
+
+// TODO: arreglar tarjetas del aside: tamaño, número, etc

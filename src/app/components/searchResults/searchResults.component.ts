@@ -1,20 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/interfaces/product.interface';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-searchComponent',
   templateUrl: './searchResults.component.html',
-  styleUrls: ['./searchResults.component.css']
+  styleUrls: ['./searchResults.component.css'],
 })
-export class SearchComponentComponent implements OnInit {
+export class SearchResultsComponent implements OnInit {
+  allProducts: Product[] = [];
 
-  @Input()
-  allProducts: Product[] = []
-
-
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService
+  ) {}
 
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      this.allProducts = this.productsService.searchProduct(params['q']);
+    });
   }
-
 }

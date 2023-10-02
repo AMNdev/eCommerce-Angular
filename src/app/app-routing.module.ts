@@ -3,21 +3,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { ProductComponent } from './components/product/product.component';
+import { MainComponent } from './components/main/main.component';
+import { SearchResultsComponent } from './components/searchResults/searchResults.component';
 
 const routes: Routes = [
-  { path: 'category/:cat', component: HomePageComponent },
-  { path: 'product/:id', component: ProductPageComponent },
-  { path: 'search/:q', component: SearchPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: ShoppingCartComponent },
-  { path: 'home', component: HomePageComponent },
+  {
+    path: 'home',
+    component: HomePageComponent,
+    children: [
+      { path: '', component: MainComponent },
+      { path: 'category/:cat', component: MainComponent },
+      { path: 'product/:id', component: ProductComponent },
+      { path: 'search/:q', component: SearchResultsComponent },
+    ],
+  },
   { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

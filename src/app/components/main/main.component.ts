@@ -1,5 +1,5 @@
-import { Component, DoCheck } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -8,19 +8,22 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements DoCheck {
+export class MainComponent implements OnInit {
   allProducts: Product[] = [];
+  id?: number;
 
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute
   ) {}
 
-  ngDoCheck(): void {
-    const cat: string = this.route.snapshot.params['cat'] || '';
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      const cat: string = params['cat'];
 
-    this.allProducts = cat
-      ? this.productsService.getProductsByCategory(cat)
-      : this.productsService.getAllProducts();
+      this.allProducts = cat
+        ? this.productsService.getProductsByCategory(cat)
+        : this.productsService.getAllProducts();
+    });
   }
 }

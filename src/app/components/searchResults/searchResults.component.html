@@ -1,7 +1,12 @@
 <ng-container *ngIf="allProducts.length !=0 ; else elseTemplate">
   <div class="productos-contenedor">
-    <app-card *ngFor="let product of  allProducts" class="items" [routerLink]="['/product', product.id]"
-      [product]="product">
+    
+    <app-card
+    *ngFor="let product of  allProducts"
+    [routerLink]="['/home/product', product.id]"
+    [product]="product"
+    class="items"
+    >
     </app-card>
   </div>
 </ng-container>

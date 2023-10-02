@@ -1,18 +1,16 @@
-<div class="menu buscarActive"
->
-<!-- [ngClass]="{'buscarActive': isSearchActive}" -->
+<div class="menu buscarActive">
+  <!-- [ngClass]="{'buscarActive': isSearchActive}" -->
   <div class="categorias">
     <ul class="categorias-ul">
       <li *ngFor="let category of categories">
-        <a [routerLink]="['/category', category]"
-        >
+        <a [routerLink]="['/home/category', category]">
           {{category}}
         </a>
       </li>
     </ul>
   </div>
 
-    <app-search (isSearchActive)="changeClass($event)"  ></app-search>
+  <app-search (isSearchActive)="changeClass($event)"></app-search>
 
 
   <div class="carrito">
@@ -20,7 +18,7 @@
       <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
 
       <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
-      <span class="badge " [ngClass]="{'oculto': !articlesNumber}" >{{articlesNumber}}</span>
+      <span class="badge " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
     </a>
   </div>
 </div>
@@ -39,6 +37,7 @@
   <div class="menuDesplegado oculto">
     <div class="categoriasDesplegable">
       <ul class="categorias-ul"></ul>
+      <!-- TODO: lista de categorías -->
     </div>
     <div class="buscarDesplegable">
       <input type="text" class="input" placeholder="Find your next purchase..." />
