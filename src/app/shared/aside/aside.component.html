@@ -1,13 +1,11 @@
 <aside class="lateral">
-  <p>aside works</p>
-  <!-- TODO: eliminar este <p> -->
 
-  <div *ngFor="let product of asideProducts" class="item-lateral">
-
+  <a
+   *ngFor="let product of asideProducts"
+   class="item-lateral"
+   [routerLink]="['/home/product', product.id]"
+   >
     <img src="{{product.image}}" alt="">
-    <div class="name">{{product.title}}</div>
-    <div class="price">{{product.price}}</div>
-
-  </div>
+  </a>
 
 </aside>

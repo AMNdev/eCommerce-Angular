@@ -10,14 +10,19 @@ import { ProductsService } from '../../services/products.service';
 export class AsideComponent {
   asideProducts: Product[] = [];
 
-  constructor(productsService: ProductsService) {
-    // for (let i = 0; i < 4; i++) {
-    //   this.asideProducts.push(productsService.getProductById(i + 1));
-    // }
-
+  constructor(private productsService: ProductsService,
+  ) {
     productsService.lastProductsEmitter.subscribe(
       (products) => (this.asideProducts = products)
     );
+
+    this.fillAside();
+  }
+
+  fillAside() {
+    for (let i = 0; i < 4; i++) {
+      this.productsService.getProductById(i+3)
+    }
   }
 }
 

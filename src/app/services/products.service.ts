@@ -301,17 +301,17 @@ export class ProductsService {
 
   getProductById(id: number): Product {
     const oneProduct = this.products.find((element) => element.id == id);
-    // if (oneProduct) this.lastProductsSeen.push(oneProduct)
-
-    // console.log(this.lastProductsSeen)
+    if (oneProduct) this.refreshLastSeen(oneProduct);
 
     return oneProduct || this.voidProduct;
   }
 
   refreshLastSeen(product: Product) {
-    this.lastProductsSeen.push(product);
-    // console.log(this.lastProductsSeen);
-    this.lastProductsEmitter.emit(this.lastProductsSeen)
+    if (this.lastProductsSeen.includes(product))
+      this.lastProductsSeen.splice(this.lastProductsSeen.indexOf(product), 1);
+    this.lastProductsSeen.unshift(product);
+    if (this.lastProductsSeen.length >= 5) this.lastProductsSeen.splice(5);
+    this.lastProductsEmitter.emit(this.lastProductsSeen);
   }
 
   searchProduct(term: string) {

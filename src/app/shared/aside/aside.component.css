@@ -1,42 +1,46 @@
 /*** Zona Lateral - Aside ***/
 
 .lateral {
-  min-width: 100px;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  min-width: 150px;
   grid-area: aside;
-  height: 70vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: sticky;
-  top: 0;
-  align-self: flex-start;
+  border-right: 1px solid var(--colorFondo2);
 }
+
 .lateral .item-lateral {
-  margin: 5% auto;
-  width: 95%;
-  max-height: 300px;
-  background-color: var(--colorFondo2);
-  border: 2.5px solid black;
-  border-radius: 12px;
+  /* border: 2px solid black; */
+  padding-bottom: 0.5rem;
+  margin: 0.5rem auto;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: all .3s ease;
 }
+
+.item-lateral:hover {
+  scale: 1.1;
+}
+
+.lateral .item-lateral:not(:last-of-type)  {
+  border-bottom: 1px solid var(--colorFondo2);
+}
+
 .lateral .item-lateral .img-lateral {
   overflow: hidden;
 }
+
 .lateral .item-lateral img {
   width: 100%;
-  scale: 1.3;
 }
-.lateral .item-lateral .name {
-  float: left;
-  margin: 5px;
-  color: var(--colorLetra3);
-}
-.lateral .item-lateral .price {
-  margin: 5px;
-  float: right;
-  color: var(--colorLetra4);
-}
+
 
 @media (max-width: 376px) {
   .lateral {
