@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
@@ -19,6 +20,7 @@ import { ComponentsModule } from './components/components.module';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule,
     ComponentsModule,
     FormsModule,
     PagesModule,
@@ -30,3 +32,4 @@ import { ComponentsModule } from './components/components.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

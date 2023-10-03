@@ -1,20 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryService {
+  private url: string = 'https://fakestoreapi.com';
 
-  private categories :string[] =[
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing"
-    ]
+  private categories: string[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  getCategories():string[] {
+  getCategories() {
+    if (this.categories.length == 0) {
+      // console.log('http categorias');
+      this.http
+        .get<string[]>(`${this.url}/products/categories`)
+        .subscribe((d) => {
+          this.categories = d;
+        });
+    }
+
     return this.categories;
-   }
+  }
 }

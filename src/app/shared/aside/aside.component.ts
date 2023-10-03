@@ -26,4 +26,3 @@ export class AsideComponent {
   }
 }
 
-// TODO: arreglar tarjetas del aside: tamaño, número, etc
