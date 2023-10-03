@@ -7,7 +7,7 @@
     <div class="producto-info">
       <h2 id="nombre">{{currentProduct.title}}</h2>
       <p id="categoria">{{currentProduct.category}}</p>
-      <p id="precio">${{currentProduct.price}}</p>
+      <p id="precio">{{currentProduct.price | currency: 'EUR'}}</p>
       <p id="descripcion">{{currentProduct.description}}</p>
       <p id="rating">{{currentProduct.rating.rate}}⭐/{{currentProduct.rating.count}}👥</p>
 
