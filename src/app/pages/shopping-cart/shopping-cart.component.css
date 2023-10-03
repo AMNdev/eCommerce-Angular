@@ -44,6 +44,7 @@
   width: 150px;
   height: 150px;
 }
+
 .imagen-producto img {
   width: 100%;
   height: 100%;
@@ -60,6 +61,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .detalles {
   /* width: 500px; */
   width: 100%;
@@ -69,6 +71,7 @@
 .info {
   margin: 1rem 0.5rem;
 }
+
 .info {
   margin-left: 1.5rem;
   height: 60px;
@@ -93,6 +96,7 @@
   padding: 0.5rem;
   text-align: center;
 }
+
 .numeros input {
   width: 3.5rem;
   padding: 0.5rem;
@@ -126,7 +130,7 @@
   line-height: 37px;
 }
 
-.resumen-lista h4{
+.resumen-lista h4 {
   text-align: center;
   margin-bottom: 10px;
 }
@@ -159,12 +163,14 @@
   overflow: hidden;
   width: 50px;
 }
+
 .resumen-name {
   width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .resumen-cantidad,
 .resumen-total {
   text-align: center;
@@ -192,9 +198,11 @@
   overflow: hidden;
   transition-duration: 0.3s;
 }
+
 .comprar-btn.eliminar {
   background: var(--colorFondo3);
 }
+
 .comprar-btn:hover {
   letter-spacing: 2px;
   background: var(--colorFondoFooter);
@@ -209,14 +217,19 @@
   .grid-area {
     flex-direction: column;
   }
+
   .lista {
     width: 100%;
   }
+
   .resumen {
     width: 100%;
     border-left: none;
   }
+
   .resumen-comprar {
     margin-bottom: 2rem;
   }
 }
+
+

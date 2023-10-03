@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'search/:q', component: SearchResultsComponent },
     ],
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: HomePageComponent },
 ];
 

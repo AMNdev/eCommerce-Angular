@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
@@ -17,12 +18,14 @@ import { ComponentsModule } from './components/components.module';
   ],
   imports: [
     AppRoutingModule,
-    FormsModule,
     BrowserModule,
-    PagesModule,
     ComponentsModule,
+    FormsModule,
+    PagesModule,
     SharedModule,
+    SweetAlert2Module.forRoot(),
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })

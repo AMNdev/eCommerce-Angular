@@ -1,8 +1,11 @@
+import Swal from 'sweetalert2';
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from '../../services/products.service';
-import { ActivatedRoute, Params } from '@angular/router';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+
 
 @Component({
   selector: 'app-product',
@@ -26,6 +29,11 @@ export class ProductComponent implements OnInit {
 
   addProduct() {
     this.shoppingCart.addProductToCart(this.currentProduct);
-    // TODO: añadir un modal de aviso
+    Swal.fire({
+      icon: 'success',
+      title: 'Successfully added to your cart!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   }
 }

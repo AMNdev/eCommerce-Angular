@@ -9,7 +9,6 @@ export class ShoppingCartService {
   private shoppingCart: ShoppingCart[];
   public cartLengthEmitter = new EventEmitter<number>();
 
-
   constructor() {
     this.shoppingCart =
       JSON.parse(localStorage.getItem('ShoppingCart-eCommerceAngular')!) || [];
@@ -21,12 +20,9 @@ export class ShoppingCartService {
     return this.shoppingCart;
   }
 
-
   setShoppingCart(newCart: ShoppingCart[]) {
     this.shoppingCart = newCart;
     this.cartToLocalStorage();
-    console.log(this.shoppingCart);
-
   }
 
   addProductToCart(product: Product) {
@@ -39,7 +35,6 @@ export class ShoppingCartService {
       this.shoppingCart.push({ product, quantity: 1 });
     }
     this.cartToLocalStorage();
-
   }
 
   deleteProductFromCart(product: Product) {
@@ -55,9 +50,7 @@ export class ShoppingCartService {
   deleteAllProducts() {
     this.shoppingCart = [];
     this.cartToLocalStorage();
-    alert('Your shopping chart is empty');
   }
-
 
   private cartToLocalStorage() {
     this.refreshCartLength();
