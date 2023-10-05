@@ -18,7 +18,11 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      this.allProducts = this.productsService.searchProduct(params['q']);
+      this.productsService
+        .searchProduct(params['q'])
+        .subscribe((resp) => {
+          this.allProducts = resp
+        });
     });
   }
 }

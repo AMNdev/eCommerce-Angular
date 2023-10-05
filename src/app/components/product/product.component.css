@@ -104,6 +104,9 @@
   border: 1px solid var(--colorBoton2);
 }
 
+.waiting{
+  padding: 3rem;
+}
 /* nombre categoria descripcion precio rating */
 
 @media (max-width: 750px) {

@@ -1,33 +1,38 @@
 <div class="contenedor">
-  <div class="producto-card">
-    <div class="producto-img">
-      <img class="producto-imagen" [src]="currentProduct.image" [alt]="currentProduct.description" />
-    </div>
-
-    <div class="producto-info">
-      <h2 id="nombre">{{currentProduct.title}}</h2>
-      <p id="categoria">{{currentProduct.category}}</p>
-      <p id="precio">{{currentProduct.price | currency: 'EUR'}}</p>
-      <p id="descripcion">{{currentProduct.description}}</p>
-      <p id="rating">{{currentProduct.rating.rate}}⭐/{{currentProduct.rating.count}}👥</p>
-
-
-      <div class="add-carrito">
-        <button
-         type="button" class="button" (click)="addProduct()" >
-          <span class="button__text">Add to cart</span>
-          <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
-              stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
-              fill="none" class="svg">
-              <line y2="19" y1="5" x2="12" x1="12"></line>
-              <line y2="12" y1="12" x2="19" x1="5"></line>
-            </svg></span>
-        </button>
+  <ng-container *ngIf="currentProduct; else elseTemplate">
+    <div class="producto-card">
+      <div class="producto-img">
+        <img class="producto-imagen" [src]="currentProduct.image" [alt]="currentProduct.description" />
       </div>
+
+      <div class="producto-info">
+        <h2 id="nombre">{{currentProduct.title}}</h2>
+        <p id="categoria">{{currentProduct.category}}</p>
+        <p id="precio">{{currentProduct.price | currency: 'EUR'}}</p>
+        <p id="descripcion">{{currentProduct.description}}</p>
+        <p id="rating">{{currentProduct.rating.rate}}⭐/{{currentProduct.rating.count}}👥</p>
+
+
+        <div class="add-carrito">
+          <button type="button" class="button" (click)="addProduct()">
+            <span class="button__text">Add to cart</span>
+            <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24"
+                fill="none" class="svg">
+                <line y2="19" y1="5" x2="12" x1="12"></line>
+                <line y2="12" y1="12" x2="19" x1="5"></line>
+              </svg></span>
+          </button>
+        </div>
+      </div>
+
+
     </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <h2 class="waiting" >Waiting...</h2>
+  </ng-template>
 
-
-  </div>
 
 
 </div>

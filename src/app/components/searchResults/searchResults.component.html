@@ -1,15 +1,7 @@
-<ng-container *ngIf="allProducts.length !=0 ; else elseTemplate">
-  <div class="productos-contenedor">
-    
-    <app-card
-    *ngFor="let product of  allProducts"
-    [routerLink]="['/home/product', product.id]"
-    [product]="product"
-    class="items"
-    >
-    </app-card>
-  </div>
+<ng-container *ngIf="allProducts.length !=0 ; else elseTemplate" class="productos-contenedor">
+  <app-card [products]="allProducts" class="items"></app-card>
 </ng-container>
+
 <ng-template #elseTemplate>
   <h3>Sorry, no products found...</h3>
 </ng-template>

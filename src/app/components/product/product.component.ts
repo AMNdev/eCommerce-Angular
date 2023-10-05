@@ -6,7 +6,6 @@ import { Product } from 'src/app/interfaces/product.interface';
 import { ProductsService } from '../../services/products.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
-
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -23,7 +22,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      this.currentProduct = this.productService.getProductById(params['id']);
+      this.productService
+        .getProductById(params['id'])
+        .subscribe((product) => (this.currentProduct = product));
     });
   }
 

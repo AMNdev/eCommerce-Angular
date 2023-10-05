@@ -15,23 +15,18 @@ export class MenuComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private cartService: ShoppingCartService
-  ) {
-    cartService.cartLengthEmitter.subscribe(
-      (num) => (this.articlesNumber = num)
-    );
-  }
+  ) {}
 
   ngOnInit(): void {
     this.cartService.refreshCartLength();
 
-    if (this.categoryService.getCategories().length != 0) {
-      // console.log('precargado')
-      this.categories = this.categoryService.getCategories();
-    } else {
-      setTimeout(() => {
-        this.categories = this.categoryService.getCategories();
-      }, 500);
-    }
+    this.cartService.cartLengthEmitter.subscribe(
+      (num) => (this.articlesNumber = num)
+    );
+
+    this.categoryService.getCategories().subscribe((data) => {
+      this.categories = data;
+    });
   }
 
   changeClass(event: boolean): void {

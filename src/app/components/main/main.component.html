@@ -1,12 +1,5 @@
-<div class="main">
-  <div class="productos-contenedor">
-
-    <app-card
-    *ngFor="let product of  allProducts"
-    [routerLink]="['/home/product', product.id]"
-    [product]="product"
-    class="items"
-    >
+  <div class="productos-contenedor" >
+    <app-card [products]="productList"  class="items"   >
     </app-card>
   </div>
-</div>
+
