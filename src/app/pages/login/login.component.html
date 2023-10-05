@@ -1,20 +1,22 @@
 <div class="contenedor">
+
   <div class="form">
-    <form #loginForm="ngForm" (submit)="login()" >
 
-      <!-- <label for="email">User</label> -->
+    <form (ngSubmit)="login()" autocomplete="off" [formGroup]="loginForm" id="loginForm">
 
-      <input [(ngModel)]="email" type="email" name="email"  placeholder="Introduce user email" required/>
+      <input type="text" name="username" formControlName="username" placeholder="Introduce username"
+        [ngClass]="{'invalid': invalidField('username')}" />
 
-      <!-- <label for="password">Password</label> -->
 
-      <input [(ngModel)]="password" type="password" name="password" placeholder="Introduce password" required/>
-
+      <input type="password" name="password" formControlName="password" placeholder="Introduce password"
+        [ngClass]="{'invalid': invalidField('password')}" />
 
       <button type="submit">Send</button>
 
+      <ul class="validations">
+        <li *ngIf="invalidField('username')">username obligatorio</li>
+        <li *ngIf="invalidField('password')">Password obligatorio</li>
+      </ul>
     </form>
   </div>
 </div>
-
-

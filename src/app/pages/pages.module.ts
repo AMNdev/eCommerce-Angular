@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { ComponentsModule } from '../components/components.module';
@@ -27,6 +27,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ComponentsModule,
     FormsModule,
     SharedModule,
+    ReactiveFormsModule
   ],
   exports: [],
   providers: [],

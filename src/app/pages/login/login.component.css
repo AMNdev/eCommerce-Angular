@@ -2,8 +2,6 @@
   padding: 4rem 0;
 }
 
-/* TODO: añadir sombras, bordes... hacer más bonito el formulario */
-
 .form form {
   /* width: 50%; */
   min-width: 200px;
@@ -33,11 +31,10 @@
   font-family: inherit;
 }
 
-
-.ng-valid[required], .ng-valid.required  {
-  background: rgba(0, 128, 0, 0.116);
+.validations {
+  align-self: center;
 }
 
-.ng-invalid:not(form)  {
-  background: rgba(255, 0, 0, 0.151);
+.invalid {
+  border: 2px solid red;
 }

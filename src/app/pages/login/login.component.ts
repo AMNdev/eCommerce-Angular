@@ -1,23 +1,65 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { catchError, of } from 'rxjs';
+import Swal from 'sweetalert2';
+
+import { LoginService } from 'src/app/services/login.service';
+import { ErrorResponse } from '../../interfaces/JSONresponse.interface';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  email:string = '';
-  password: string = '';
+  public formSubmitted = false;
 
-  constructor() {}
+  public loginForm = this.fb.group({
+    username: ['derek', Validators.required],
+    password: ['jklg*_56', Validators.required],
+  });
 
-
-  // TODO: Validar el formulario y conectar con api
+  constructor(private fb: FormBuilder, private loginService: LoginService) {}
 
   login() {
-    console.log('submit', this.email, this.password)
-    this.email = '';
-    this.password = '';
+    this.formSubmitted = true;
 
+    if (this.loginForm.valid) {
+      const password = this.loginForm.value.password!;
+      const username = this.loginForm.value.username!;
+      console.log('post form');
+      this.loginService
+        .login({ username, password })
+        .pipe(
+          catchError((err) => {
+            console.log(err);
+            return of(err);
+          })
+        )
+        .subscribe((resp) => {
+          if (resp.token) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Login successful',
+              text: `${resp['token']}`,
+            });
+          } else {
+            const errorResponse: ErrorResponse = resp;
+            Swal.fire({
+              icon: 'error',
+              title: `Error ${errorResponse.status}: ${errorResponse.error}`,
+              text: errorResponse.message,
+              footer: '<a href="">Why do I have this issue?</a>',
+            });
+          }
+        });
+    } else {
+      console.log('invalid form');
+    }
+  }
+
+  invalidField(campo: string): boolean {
+    if (this.loginForm.get(campo)?.invalid && this.formSubmitted) return true;
+    else return false;
   }
 }

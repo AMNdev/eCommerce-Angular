@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
@@ -22,7 +22,8 @@ import { ComponentsModule } from './components/components.module';
     BrowserModule,
     HttpClientModule,
     ComponentsModule,
-    FormsModule,
+    // FormsModule,
+    // ReactiveFormsModule,
     PagesModule,
     SharedModule,
     SweetAlert2Module.forRoot(),
