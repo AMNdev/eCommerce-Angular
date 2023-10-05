@@ -32,3 +32,4 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
   providers: [],
 })
 export class PagesModule {}
+

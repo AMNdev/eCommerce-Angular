@@ -18,15 +18,14 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.refreshCartLength();
-
     this.cartService.cartLengthEmitter.subscribe(
       (num) => (this.articlesNumber = num)
     );
-
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
     });
+    
+    this.cartService.refreshCartLength();
   }
 
   changeClass(event: boolean): void {

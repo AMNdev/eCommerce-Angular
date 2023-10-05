@@ -5,12 +5,14 @@ import { ProductComponent } from './product/product.component';
 import { CardComponent } from './card/card.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { UpButtonComponent } from './up-button/up-button.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     ProductComponent,
-    CardComponent
+    CardComponent,
+    UpButtonComponent
   ],
 
   imports: [
@@ -21,7 +23,8 @@ import { SharedModule } from '../shared/shared.module';
   exports: [
     CardComponent,
     MainComponent,
-    ProductComponent
+    ProductComponent,
+    UpButtonComponent
   ],
   providers: [],
 })

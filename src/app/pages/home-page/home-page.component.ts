@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
+  
   constructor() {}
 }
