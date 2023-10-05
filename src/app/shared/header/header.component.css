@@ -10,7 +10,7 @@ header {
     var(--color5)
   );
 
-  height: 8vw;
+  height: 8vh;
   max-height: 100px;
   width: 100%;
   display: flex;
