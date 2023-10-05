@@ -10,8 +10,7 @@ import { ProductsService } from '../../services/products.service';
 export class AsideComponent {
   asideProducts: Product[] = [];
 
-  constructor(private productsService: ProductsService,
-  ) {
+  constructor(private productsService: ProductsService) {
     productsService.lastProductsEmitter.subscribe(
       (products) => (this.asideProducts = products)
     );
@@ -21,7 +20,8 @@ export class AsideComponent {
 
   fillAside() {
     for (let i = 0; i < 4; i++) {
-      this.productsService.getProductById(i+3)
+      const rndIdx = Math.floor(Math.random() * 20);
+      this.productsService.getProductById(rndIdx).subscribe();
     }
   }
 }
