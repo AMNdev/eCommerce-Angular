@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   categories: string[] = [];
   articlesNumber: number = 0;
   isSearchActive: boolean = false;
+  isDropDownVisible : boolean = false
 
   constructor(
     private categoryService: CategoryService,
@@ -24,11 +25,15 @@ export class MenuComponent implements OnInit {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
     });
-    
+
     this.cartService.refreshCartLength();
   }
 
   changeClass(event: boolean): void {
     this.isSearchActive = event;
+  }
+
+  showDropdown() {
+    this.isDropDownVisible = !this.isDropDownVisible
   }
 }

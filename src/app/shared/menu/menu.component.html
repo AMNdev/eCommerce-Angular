@@ -30,22 +30,30 @@
 <!--           **************************************         -->
 
 <div class="menuDesplegable">
-  <div class="desplegarBoton">
+  <div class="desplegarBoton" (click)="showDropdown()">
     <img src="../../../assets/svg/ellipsis-horizontal-outline.svg" alt="">
     <!-- <ion-icon name="ellipsis-horizontal-outline"></ion-icon> -->
   </div>
-  <div class="menuDesplegado oculto">
+  <div class="menuDesplegado " [ngClass]="{'oculto': !isDropDownVisible}">
     <div class="categoriasDesplegable">
-      <ul class="categorias-ul"></ul>
-      <!-- TODO: lista de categorías -->
+      <ul class="categorias-ul" (click)="showDropdown()">
+        <li *ngFor="let category of categories">
+          <a [routerLink]="['/home/category', category]">
+            {{category}}
+          </a>
+        </li>
+      </ul>
+
     </div>
     <div class="buscarDesplegable">
-      <input type="text" class="input" placeholder="Find your next purchase..." />
+      <app-search (isSearchActive)="changeClass($event)"></app-search>
     </div>
     <div class="carritoDesplegable">
-      <a href="../html/carrito.html" class="btn-carritoDesplegable">
+      <a routerLink="/cart" class="btn-carritoDesplegable">
+        <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
+
         <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
-        <span class="badgeDesplegable oculto"></span>
+        <span class="badgeDesplegable " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
       </a>
     </div>
   </div>
