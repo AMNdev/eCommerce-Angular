@@ -1,25 +1,6 @@
-/* .main {
-  background: red;
-  width: 100%;
-} */
-
-/* .productos-contenedor {
-  display: flex;
-  width: 100%;
-} */
-
 .items {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
-/* @media (max-width: 376px) {
-  .main {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-} */

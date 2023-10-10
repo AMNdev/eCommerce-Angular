@@ -1,4 +1,5 @@
 .main-area {
+  background-color: var(--colorFondoPrincipal);
   min-height: 70vh;
   width: 100%;
   display: flex;
@@ -18,7 +19,7 @@
   align-items: baseline;
   padding-bottom: 1rem;
   margin: 1rem;
-  border-bottom: 1px solid lightslategray;
+  border-bottom: 1px solid var(--color1);
   height: 50px;
 }
 
@@ -38,7 +39,7 @@
 }
 
 .producto:not(:last-child) {
-  border-bottom: 1px solid lightslategray;
+  border-bottom: 1px solid var(--color3);
 
 }
 
@@ -115,20 +116,20 @@
 
 .resumen {
   width: 30%;
-  border-left: 1px solid lightslategray;
+  border-left: 1px solid var(--color1);
 }
 
 .resumen-productos {
   margin: 0 auto;
   width: 90%;
   margin-bottom: 2rem;
-  border-bottom: 1px solid lightslategray;
+  border-bottom: 1px solid var(--color1);
 }
 
 .resumen-productos .titulo {
   padding-bottom: 1rem;
   margin: 1rem;
-  border-bottom: 1px solid lightslategray;
+  border-bottom: 1px solid var(--color1);
   height: 50px;
   line-height: 37px;
 }
@@ -142,7 +143,7 @@
   width: 90%;
   margin: 0 auto;
   padding: 1rem 2rem;
-  border-top: 1px solid lightslategray;
+  border-top: 1px solid var(--color1);
 }
 
 .resumen-final {
@@ -190,7 +191,7 @@
   margin: 1rem auto;
   width: 180px;
   height: 50px;
-  background-color: var(--colorFondo2);
+  background-color: var(--colorBadge);
   border: none;
   color: white;
   font-family: inherit;
@@ -203,12 +204,12 @@
 }
 
 .comprar-btn.eliminar {
-  background: var(--colorFondo3);
+  background: var(--color2);
 }
 
 .comprar-btn:hover {
   letter-spacing: 2px;
-  background: var(--colorFondoFooter);
+  background: var(--color1);
 }
 
 .comprar-btn:active {
@@ -229,7 +230,7 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 1rem;
-    border-bottom: 1px solid lightslategray;
+    border-bottom: 1px solid var(--color1);
     height: auto;
     overflow: hidden;
     justify-content: center;

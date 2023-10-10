@@ -39,7 +39,7 @@
     <div class="categoriasDesplegable">
       <ul class="categorias-ul" (click)="showDropdown()">
         <li *ngFor="let category of categories">
-          <a routerLink="['/home/category', category]">
+          <a [routerLink]="['/home/category', category]">
 
             {{category}}
           </a>

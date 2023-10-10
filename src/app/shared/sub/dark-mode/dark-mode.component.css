@@ -4,6 +4,8 @@
   margin: 0 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
+  transition: 0.3s;
+
 }
 .iconosDarkMode:hover {
   /* From https://css.glass */

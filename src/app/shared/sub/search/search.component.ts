@@ -26,6 +26,7 @@ export class SearchComponent {
     const term = this.searchInput.nativeElement.value;
     console.log(`Searching...${term}`);
     this.changeInputVisibility();
+    this.searchInput.nativeElement.blur()
 
     this.router.navigateByUrl(`/home/search/${term}`);
   }
@@ -34,8 +35,7 @@ export class SearchComponent {
     if (this.biggerInput && this.searchInput.nativeElement.value) return this.search();
 
     this.searchInput.nativeElement.value = '';
-    if (this.biggerInput) this.searchInput.nativeElement.focus();
-    else this.searchInput.nativeElement.blur()
+
 
     this.changeInputVisibility();
   }
@@ -43,5 +43,10 @@ export class SearchComponent {
   changeInputVisibility() {
     this.isSearchActive.emit(!this.biggerInput);
     this.biggerInput = !this.biggerInput;
+    if (this.biggerInput) {
+      this.searchInput.nativeElement.focus();
+    } else {
+      this.searchInput.nativeElement.blur()
+    }
   }
 }

@@ -1,10 +1,6 @@
 h3 {
   margin: 70px;
 }
-.main {
-  background: red;
-  width: 100%;
-}
 
 .productos-contenedor {
   display: flex;
@@ -18,11 +14,4 @@ h3 {
   justify-content: space-evenly;
 }
 
-@media (max-width: 376px) {
-  .main {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+

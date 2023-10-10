@@ -1,3 +1,27 @@
-/* .main{
-  border: 2px solid green;
-} */
+
+.grid-area {
+  background-color: var(--colorFondoPrincipal);
+  display: grid;
+  min-height: 70vh;
+  grid-gap: 1vw;
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas: "aside main main";
+}
+
+
+/*********---- Media Queries ------ **********/
+
+@media (max-width: 376px) {
+  .grid-area {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,9 +1,3 @@
-:root {
-  --colorBoton1: var(--color4);
-  --colorBoton2: var(--color3);
-  --colorLetraBoton: #fafbfb;
-
-}
 
 .add-carrito {
   margin: 1rem auto;
@@ -23,6 +17,7 @@
   background-color: var(--colorBoton2);
   font-family: inherit;
   border-radius: 2px;
+
 }
 
 .button,
@@ -55,6 +50,7 @@
 
 .button:hover {
   background: var(--colorBoton1);
+  box-shadow: 2px 3px 4px 5px rgba(252,131,131, 0.3);
 }
 
 .button:hover .button__text {

@@ -1,7 +1,7 @@
 /** Zona inferior --- Footer **/
 
 footer {
- 
+
   padding: 1rem;
   background-color: var(--colorFondoFooter);
   width: 100%;
@@ -35,7 +35,9 @@ footer ul li a {
 }
 footer .icono{
   width: 30px;
+  /* TODO: colorear SVG */
 }
 footer ul li:hover .icono {
-  scale: 1.4;
+  transform: scale(1.5);
+  transition-duration: 0.5s;
 }
