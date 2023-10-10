@@ -12,7 +12,6 @@ export class DarkModeComponent {
     this.isDarkMode = this.darkModeService.darkMode;
   }
   toggleDarkMode() {
-    // console.log('component toggle')
     this.darkModeService.toggleDarkMode();
     this.isDarkMode = this.darkModeService.darkMode;
   }

@@ -1,11 +1,14 @@
-<div class="iconosDarkMode" (click)="toggleDarkMode()" >
-  <div class="iconoDark" [ngClass]="{'oculto': isDarkMode}" >
-    <img src="../../../assets/svg/moon-sharp.svg" alt="">
-    <!-- <ion-icon name="moon"></ion-icon> -->
-  </div>
-  <div class="iconoDark "  [ngClass]="{'oculto': !isDarkMode}" >
-    <img src="../../../assets/svg/sunny-sharp.svg" alt="">
+<div class="iconosDarkMode" (click)="toggleDarkMode()">
+  
+  <ng-container *ngIf="isDarkMode; else elseTemplate">
+    <div class="iconoDark">
+      <img src="../../../assets/svg/moon-sharp.svg" alt="">
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="iconoDark ">
+      <img src="../../../assets/svg/sunny-sharp.svg" alt="">
+    </div>
+  </ng-template>
 
-    <!-- <ion-icon name="sunny"></ion-icon> -->
-  </div>
 </div>
