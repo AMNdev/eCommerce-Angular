@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { DarkModeComponent } from './sub/dark-mode/dark-mode.component';
 import { SearchComponent } from './sub/search/search.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,15 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     AppRoutingModule,
     CommonModule,
-    FormsModule],
+    FormsModule,
+    RouterModule
+  ],
   exports: [
-    HeaderComponent,
     AsideComponent,
-    FooterComponent,
-    MenuComponent,
     DarkModeComponent,
+    FooterComponent,
+    HeaderComponent,
+    MenuComponent,
     SearchComponent,
   ],
 })

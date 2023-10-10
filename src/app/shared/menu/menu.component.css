@@ -55,6 +55,12 @@
   border-radius: 5px;
 }
 
+.activeCategory {
+  border-radius: 5px;
+  border: 10px solid var(--colorFondo4);
+}
+
+
 /* **************************** ****** *************************** */
 /* **************************** Buscar *************************** */
 /* **************************** ****** *************************** */
@@ -64,21 +70,6 @@
   flex: 6;
 }
 
-/*
-.menu.buscarActive app-search {
-  flex: 6;
-} */
-
-
-
-/* .menu.buscarActive .btn-buscar {
-  cursor: pointer;
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 10%;
-  transform: 0.3s ease;
-} */
 
 /* **************************** ****** *************************** */
 /* **************************** CARRITO ************************** */
@@ -156,18 +147,7 @@
   .btn-buscar img {
     padding: 0.5rem;
   }
-/*
-  .buscar.active .input {
-    width: 80%;
-  }
 
-  .menu.buscarActive .categorias {
-    flex: 4;
-  }
-
-  .menu.buscarActive .buscar {
-    flex: 5;
-  } */
 }
 
 @media (max-width: 630px) {

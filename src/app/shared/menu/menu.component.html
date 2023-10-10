@@ -1,11 +1,12 @@
-<div class="menu buscarActive">
-  <!-- [ngClass]="{'buscarActive': isSearchActive}" -->
+<div class="menu ">
   <div class="categorias">
     <ul class="categorias-ul">
       <li *ngFor="let category of categories">
-        <a [routerLink]="['/home/category', category]">
+        <a [routerLink]="['/home/category', category]" routerLinkActive="activeCategory"
+          [routerLinkActiveOptions]="{exact: true}">
           {{category}}
         </a>
+
       </li>
     </ul>
   </div>
@@ -17,7 +18,7 @@
     <a routerLink="/cart" class="btn-carrito">
       <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
 
-      <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
+
       <span class="badge " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
     </a>
   </div>
@@ -32,13 +33,14 @@
 <div class="menuDesplegable">
   <div class="desplegarBoton" (click)="showDropdown()">
     <img src="../../../assets/svg/ellipsis-horizontal-outline.svg" alt="">
-    <!-- <ion-icon name="ellipsis-horizontal-outline"></ion-icon> -->
+
   </div>
   <div class="menuDesplegado " [ngClass]="{'oculto': !isDropDownVisible}">
     <div class="categoriasDesplegable">
       <ul class="categorias-ul" (click)="showDropdown()">
         <li *ngFor="let category of categories">
-          <a [routerLink]="['/home/category', category]">
+          <a routerLink="['/home/category', category]">
+
             {{category}}
           </a>
         </li>
@@ -52,7 +54,6 @@
       <a routerLink="/cart" class="btn-carritoDesplegable">
         <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
 
-        <!-- <ion-icon name="bag-handle-outline"></ion-icon> -->
         <span class="badgeDesplegable " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
       </a>
     </div>
