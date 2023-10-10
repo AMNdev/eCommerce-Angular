@@ -49,7 +49,7 @@ export class LoginComponent {
               icon: 'error',
               title: `Error ${errorResponse.status}: ${errorResponse.error}`,
               text: errorResponse.message,
-              footer: '<a href="">Why do I have this issue?</a>',
+              
             });
           }
         });

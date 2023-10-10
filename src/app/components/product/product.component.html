@@ -1,9 +1,12 @@
 <div class="contenedor">
   <ng-container *ngIf="currentProduct; else elseTemplate">
     <div class="producto-card">
+
+
       <div class="producto-img">
         <img class="producto-imagen" [src]="currentProduct.image" [alt]="currentProduct.description" />
       </div>
+
 
       <div class="producto-info">
         <h2 id="nombre">{{currentProduct.title}}</h2>
@@ -24,6 +27,7 @@
               </svg></span>
           </button>
         </div>
+
       </div>
 
 

@@ -31,10 +31,11 @@ export class SearchComponent {
   }
 
   focusOnSearch() {
-    if (this.biggerInput) return this.search();
+    if (this.biggerInput && this.searchInput.nativeElement.value) return this.search();
 
     this.searchInput.nativeElement.value = '';
-    this.searchInput.nativeElement.focus();
+    if (this.biggerInput) this.searchInput.nativeElement.focus();
+    else this.searchInput.nativeElement.blur()
 
     this.changeInputVisibility();
   }

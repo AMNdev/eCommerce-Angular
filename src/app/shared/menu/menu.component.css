@@ -156,7 +156,7 @@
   .btn-buscar img {
     padding: 0.5rem;
   }
-
+/*
   .buscar.active .input {
     width: 80%;
   }
@@ -167,7 +167,7 @@
 
   .menu.buscarActive .buscar {
     flex: 5;
-  }
+  } */
 }
 
 @media (max-width: 630px) {
@@ -283,9 +283,10 @@
     position: relative;
   }
 
-  .btn-carritoDesplegable ion-icon {
+  .btn-carritoDesplegable img {
     color: var(--colorLetra1);
-    font-size: 1.3rem;
+    /* font-size: 1.3rem; */
+    height: 25px;
   }
 
   .btn-carritoDesplegable .badgeDesplegable {

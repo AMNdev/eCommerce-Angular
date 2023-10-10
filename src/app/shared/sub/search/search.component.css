@@ -71,3 +71,69 @@
   color: var(--colorLetra4);
   font-style: italic;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+
+  .btn-buscar img {
+    padding: 0.5rem;
+  }
+
+  .buscar.active .input {
+    width: 80%;
+  }
+
+  .menu.buscarActive .categorias {
+    flex: 4;
+  }
+
+  .menu.buscarActive .buscar {
+    flex: 5;
+  }
+}
+
+@media (max-width: 630px) {
+
+  .buscarDesplegable {
+    width: 70%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .buscarDesplegable input {
+    width: 100%;
+    border: none;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0.3rem;
+    padding: 0.1rem;
+    border-radius: 5px;
+    background-color: var(--colorFondoBuscar);
+    color: var(--colorLetraBuscar);
+  }
+
+  .buscarDesplegable input:focus {
+    outline: none;
+  }
+
+  .buscarDesplegable input::placeholder {
+    border: 0;
+    font-size: 0.7rem;
+    text-align: center;
+    color: var(--colorLetra4);
+    font-style: italic;
+  }
+}
