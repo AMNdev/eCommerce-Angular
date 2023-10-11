@@ -1,11 +1,12 @@
 <!--BOTON IR ARRIBA-->
-<div class="button-arriba">
+<div class="button-arriba" *ngIf="shows"  >
   <a
-    class="btnArriba"
-    [ngClass]="{'shows': shows}"
+    class="btnArriba shows"
     (click)="goUp()"
     id="buttonTop">
-
-    <img class="icono"  src="../../../assets/svg/chevron-up-sharp.svg" alt="" />
+<!-- TODO: comprobar que sale bien o si no volver a la animación del shows -->
+    <!-- [ngClass]="{'shows': shows}" -->
+    <!-- <img class="icono"  src="../../../assets/svg/chevron-up-sharp.svg" alt="" /> -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-miterlimit="10" stroke-width="48" d="M112 328l144-144 144 144"/></svg>
   </a>
 </div>

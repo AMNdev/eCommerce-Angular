@@ -42,7 +42,7 @@ header h1 a {
   justify-content: center;
 }
 
-.login a img {
+.login a svg {
   width: 1.5rem;
   color: var(--colorLetra1);
 }

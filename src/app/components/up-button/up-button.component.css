@@ -32,7 +32,10 @@
 .button-arriba .btnArriba .icono {
   width: 50px;
   font-size: 2rem;
+  fill: var(--colorLetra1);
+  /* TODO: comprobar que sale bien */
 }
+
 
 .shows {
   animation: popup 0.5s ease-in-out;

@@ -59,8 +59,8 @@
   --colorFondo2: var(--color2);
 
   --colorBadge: #fc8383;
-
-  --colorFondoBtnArriba: var(--color2);
+/* TODO: comprobar que se ve bien en modo oscuro el boton arriba */
+  --colorFondoBtnArriba: var(--colorOscuro1);
   --colorFondoFooter: var(--color2);
 
   --colorLetraBuscar: var(--colorOscuro1);

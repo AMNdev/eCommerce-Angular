@@ -94,15 +94,14 @@
   position: relative;
 }
 
-.btn-carrito img {
+.btn-carrito svg {
   color: var(--colorLetra1);
-  /* TODO: colorear SVG  */
   height: 70%;
   width: 70%;
   transition: rotate 0.3s ease;
 }
 
-.btn-carrito:hover img {
+.btn-carrito:hover svg {
   rotate: 15deg;
 }
 
@@ -173,9 +172,8 @@
     overflow: hidden;
   }
 
-  .desplegarBoton img {
+  .desplegarBoton svg {
     width: 10%;
-    /* TODO: colorear SVG */
   }
 
   .categoriasDesplegable {
@@ -225,7 +223,7 @@
     display: flex;
     justify-content: center;
   }
-
+/* TODO: arreglar spp-search responsive */
   .buscarDesplegable input {
     width: 100%;
     border: none;
@@ -265,7 +263,7 @@
     position: relative;
   }
 
-  .btn-carritoDesplegable img {
+  .btn-carritoDesplegable svg {
     color: var(--colorLetra1);
     /* font-size: 1.3rem; */
     height: 25px;

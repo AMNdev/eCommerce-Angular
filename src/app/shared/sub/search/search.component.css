@@ -6,10 +6,9 @@
   display: flex;
   transition: all 0.5s ease;
 }
-.buscar:hover .btn-buscar img {
+.buscar:hover .btn-buscar svg {
   rotate: -20deg;
 }
-  /* TODO: colorear SVG  */
 
 .buscar .input {
   border: none;
@@ -46,11 +45,11 @@
   justify-content: center;
   align-items: center;
 }
-.btn-buscar img {
-/* TODO: colorear SVG */
+.btn-buscar svg {
   transition: rotate 0.3s ease;
   height: 70%;
   width: 70%;
+  color: var(--colorLetra1);
 }
 
 .buscar.buscarActive .btn-buscar {

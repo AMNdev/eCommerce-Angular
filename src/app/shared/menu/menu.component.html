@@ -16,8 +16,9 @@
 
   <div class="carrito">
     <a routerLink="/cart" class="btn-carrito">
-      <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
+      <!-- <img src="../../../assets/svg/bag-handle-outline.svg" alt=""> -->
 
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M160 224v16a96 96 0 0096 96h0a96 96 0 0096-96v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
 
       <span class="badge " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
     </a>
@@ -32,8 +33,9 @@
 
 <div class="menuDesplegable">
   <div class="desplegarBoton" (click)="showDropdown()">
-    <img src="../../../assets/svg/ellipsis-horizontal-outline.svg" alt="">
+    <!-- <img src="../../../assets/svg/ellipsis-horizontal-outline.svg" alt=""> -->
 
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><circle cx="256" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><circle cx="416" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><circle cx="96" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
   </div>
   <div class="menuDesplegado " [ngClass]="{'oculto': !isDropDownVisible}">
     <div class="categoriasDesplegable">
@@ -52,7 +54,9 @@
     </div>
     <div class="carritoDesplegable">
       <a routerLink="/cart" class="btn-carritoDesplegable">
-        <img src="../../../assets/svg/bag-handle-outline.svg" alt="">
+        <!-- <img src="../../../assets/svg/bag-handle-outline.svg" alt=""> -->
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M160 224v16a96 96 0 0096 96h0a96 96 0 0096-96v-16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
 
         <span class="badgeDesplegable " [ngClass]="{'oculto': !articlesNumber}">{{articlesNumber}}</span>
       </a>

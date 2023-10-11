@@ -35,7 +35,7 @@ footer ul li a {
 }
 footer .icono{
   width: 30px;
-  /* TODO: colorear SVG */
+  fill: var(--colorLetra1);
 }
 footer ul li:hover .icono {
   transform: scale(1.5);

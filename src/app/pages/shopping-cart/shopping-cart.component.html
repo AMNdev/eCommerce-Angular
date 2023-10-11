@@ -2,7 +2,7 @@
 
   <div class="lista">
     <div class="encabezado">
-      <h2>Productos en tu cesta</h2>
+      <h2>Items in your cart</h2>
       <p id="totalProductosDom"></p>
     </div>
 
@@ -37,27 +37,27 @@
 
   <div class="resumen">
     <div class="resumen-productos">
-      <h3 class="titulo">Resumen de Pedido</h3>
+      <h3 class="titulo">Order summary</h3>
 
       <div class="resumen-lista">
         <h4>
-          {{totalProducts}} productos
+          {{totalProducts}} products
         </h4>
         <h4>
-          {{totalNumberOfItems}} unidades
+          {{totalNumberOfItems}} units
         </h4>
 
       </div>
 
       <div class="resumen-final">
-        <h3>Total</h3>
+        <h3>Total amount</h3>
         <div class="total-final">{{totalSum | currency: 'EUR'}}</div>
       </div>
     </div>
 
     <div class="resumen-comprar">
-      <button class="comprar-btn" (click)="shopNow()">Comprar ahora</button>
-      <button class="comprar-btn eliminar" (click)="deleteAll()">Eliminar productos</button>
+      <button class="comprar-btn" (click)="shopNow()">Buy now</button>
+      <button class="comprar-btn eliminar" (click)="deleteAll()">Remove items</button>
     </div>
   </div>
 </div>

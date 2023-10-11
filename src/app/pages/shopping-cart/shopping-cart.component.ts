@@ -44,19 +44,19 @@ export class ShoppingCartComponent {
     this.cart.forEach((item) => {
       if (item.quantity <= 0) {
         Swal.fire({
-          title: `Desea eliminar ${item.product.title} de la lista?`,
+          title: `Do you want to remove ${item.product.title}  from the list?`,
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#d33',
           cancelButtonColor: '#3085d6',
-          confirmButtonText: 'Eliminar',
-          cancelButtonText: 'No, conservar este producto',
+          confirmButtonText: 'Remove',
+          cancelButtonText: 'No, keep this product',
         }).then((result) => {
           if (result.isConfirmed) {
             this.cartService.deleteProductFromCart(item.product);
             Swal.fire({
               icon: 'info',
-              title: 'Has eliminado el producto de tu lista',
+              title: 'You have removed the product from your list',
               showConfirmButton: false,
               timer: 1500,
             });
@@ -78,13 +78,13 @@ export class ShoppingCartComponent {
       return this.emptyListSwal().then(() => this.redirectToHome());
 
     Swal.fire({
-      title: `Desea eliminar todos los productos?`,
+      title: 'Want to remove all products?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Eliminar todo',
-      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Remove all',
+      cancelButtonText: 'Cancel',
     }).then((result) => {
       if (result.isConfirmed) {
         this.cartService.deleteAllProducts();
@@ -100,7 +100,7 @@ export class ShoppingCartComponent {
   async emptyListSwal() {
     await Swal.fire({
       icon: 'info',
-      title: 'Tu lista está vacía',
+      title: 'Your shopping bag is empty',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -112,10 +112,10 @@ export class ShoppingCartComponent {
 
   async goodByeSwal() {
     await Swal.fire({
-      title: '<strong>¡Gracias por llegar hasta aquí!</strong>',
+      title: '<strong>Thanks for getting here!</strong>',
       icon: 'success',
       html: `
-       Código disponible en <a href="https://github.com/AMNdev/eCommerce-Angular" target="_blank" rel="noopener noreferrer">GitHub</a>
+      Code available on <a href="https://github.com/AMNdev/eCommerce-Angular" target="_blank" rel="noopener noreferrer">GitHub</a>
       `,
       showCancelButton: true,
 
