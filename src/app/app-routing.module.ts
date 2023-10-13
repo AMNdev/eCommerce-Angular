@@ -10,6 +10,7 @@ import { SearchResultsComponent } from './components/searchResults/searchResults
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: ShoppingCartComponent },
+  // { path: 'login', loadChildren: ()=> import('./pages/lazy.module').then(m=> m.LazyModule) },
   {
     path: 'home',
     component: HomePageComponent,
