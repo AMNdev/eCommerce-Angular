@@ -33,6 +33,8 @@
   --colorBoton1: var(--colorBadge);
   --colorBoton2: #FFCF96;
   --colorLetraBoton: var(--colorLetra2);
+
+  --colorBotonArriba: var(var(--colorOscuro2))
 }
 
 * {
@@ -59,8 +61,6 @@
   --colorFondo2: var(--color2);
 
   --colorBadge: #fc8383;
-/* TODO: comprobar que se ve bien en modo oscuro el boton arriba */
-  --colorFondoBtnArriba: var(--colorOscuro1);
   --colorFondoFooter: var(--color2);
 
   --colorLetraBuscar: var(--colorOscuro1);
@@ -72,6 +72,9 @@
   --colorBoton1: var(--colorBadge);
   --colorBoton2: #FFCF96;
   --colorLetraBoton: var(--colorLetra1);
+
+  --colorFondoBtnArriba: var(--colorOscuro1);
+  --colorBotonArriba: var(--color1)
 
 }
 
