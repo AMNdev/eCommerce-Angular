@@ -6,6 +6,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { ProductComponent } from './components/product/product.component';
 import { MainComponent } from './components/main/main.component';
 import { SearchResultsComponent } from './components/searchResults/searchResults.component';
+import { Error404Component } from './shared/error404/error404.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,14 +16,14 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent,
     children: [
-      { path: '', component: MainComponent },
       { path: 'category/:cat', component: MainComponent },
       { path: 'product/:id', component: ProductComponent },
       { path: 'search/:q', component: SearchResultsComponent },
+      { path: '', component: MainComponent },
     ],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', component: HomePageComponent },
+  { path: '**', component: Error404Component },
 ];
 
 @NgModule({

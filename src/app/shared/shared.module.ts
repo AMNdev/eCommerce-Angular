@@ -9,6 +9,7 @@ import { DarkModeComponent } from './sub/dark-mode/dark-mode.component';
 import { SearchComponent } from './sub/search/search.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     DarkModeComponent,
     SearchComponent,
+    Error404Component,
   ],
   imports: [
     AppRoutingModule,
@@ -32,6 +34,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     MenuComponent,
     SearchComponent,
+    Error404Component,
   ],
 })
 export class SharedModule {}
