@@ -13,9 +13,8 @@
 
 @media (max-width: 376px) {
   .grid-area {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "aside";
   }
 
   .main {

@@ -34,7 +34,7 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 1rem;
-  height: 150px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -47,14 +47,13 @@
   float: left;
   position: relative;
   width: 150px;
-  height: 150px;
   display: block;
 }
 
 .imagen-producto img {
-  height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  border-radius: 5px 5px 0 0;
 }
 
 .info-producto {
@@ -74,6 +73,7 @@
 .name,
 .info {
   margin: 1rem 0.5rem;
+  align-content: center;
 }
 
 .info {
@@ -227,7 +227,7 @@
   .producto {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--color1);
