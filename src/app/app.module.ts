@@ -8,7 +8,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
-
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 
@@ -29,7 +29,7 @@ import { ComponentsModule } from './components/components.module';
     SweetAlert2Module.forRoot(),
   ],
 
-  providers: [],
+  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
