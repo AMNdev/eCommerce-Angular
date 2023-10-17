@@ -1,36 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  CommonModule,
+  HashLocationStrategy,
+  LocationStrategy,
+} from '@angular/common';
+
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from "@angular/common/http";
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+import { HomePageModule } from './pages/home-page/home-page.module';
+import { ComponentsModule } from './components/components.module';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
-import { SharedModule } from './shared/shared.module';
-import { PagesModule } from './pages/pages.module';
-import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     ComponentsModule,
-    // FormsModule,
-    // ReactiveFormsModule,
-    PagesModule,
+    CommonModule,
+    HomePageModule,
     SharedModule,
     SweetAlert2Module.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
   ],
 
-  providers: [{provide : LocationStrategy , useClass: HashLocationStrategy}],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

@@ -10,6 +10,7 @@
 
 
       <div class="producto" *ngFor="let item of cart">
+
         <div class="imagen-producto">
           <img [src]="item.product.image" [alt]="item.product.title" />
         </div>
@@ -23,7 +24,7 @@
           </div>
           <div class="numeros">
             <div class="price">{{item.product.price |currency:'EUR'}}</div>
-            <input type="number" name="cantidad" id="cantidad" [(ngModel)]="item.quantity"
+            <input type="number" name="cantidad"  [(ngModel)]="item.quantity"
               (change)="modifyQuantity()" />
             <p>Total</p>
             <div class="total">{{item.product.price * item.quantity | currency:'EUR'}}</div>
@@ -61,3 +62,4 @@
     </div>
   </div>
 </div>
+

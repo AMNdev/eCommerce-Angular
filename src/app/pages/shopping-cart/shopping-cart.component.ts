@@ -120,7 +120,7 @@ export class ShoppingCartComponent {
       showCancelButton: true,
 
       confirmButtonText:
-        '<a style="width: 100px;" href="https://www.linkedin.com/in/antoniomarqueznovella/" target="_blank" rel="noopener noreferrer"><strong>¡Contrátame!<strong></a>',
+        '<a style="width: 100px; display: block" href="https://www.linkedin.com/in/antoniomarqueznovella/" target="_blank" rel="noopener noreferrer"><strong>¡Contrátame!<strong></a>',
       confirmButtonColor: '#06d61e',
       cancelButtonText:
         '<a style="width: 100px;" href="https://www.linkedin.com/in/antoniomarqueznovella/" target="_blank" rel="noopener noreferrer"><strong>Hire me!<strong></a>',
