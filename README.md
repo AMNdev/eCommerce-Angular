@@ -1,6 +1,6 @@
 # Trendy Gear Ecommerce
 
-![Trendy Gear Logo](ruta-del-logo.png)
+![Trendy Gear Logo](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura6.png)
 
 Trendy Gear es un proyecto de ecommerce que he creado desde cero con el objetivo de aprender el proceso de creación de aplicaciones complejas paso a paso, desde el diseño y maquetado hasta el desarrollo final, pasando por la estructuración de módulos, componentes y servicios.
 
@@ -41,7 +41,7 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
 
 Si deseas explorar el código fuente de Trendy Gear, sigue estos pasos:
 
-1. Clone este repositorio en tu máquina local con el comando `git clone ....`.
+1. Clone este repositorio en tu máquina local con el comando `git clone https://github.com/AMNdev/eCommerce-Angular.git`.
 2. Navega al directorio del proyecto con `cd tu-repositorio`.
 3. Abre el proyecto en tu navegador web.
 
