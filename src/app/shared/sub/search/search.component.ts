@@ -34,13 +34,13 @@ export class SearchComponent {
   focusOnSearch() {
     if (this.biggerInput && this.searchInput.nativeElement.value) return this.search();
 
-    this.searchInput.nativeElement.value = '';
-
-
     this.changeInputVisibility();
   }
 
   changeInputVisibility() {
+    // vaciar el input
+    this.searchInput.nativeElement.value = '';
+
     this.isSearchActive.emit(!this.biggerInput);
     this.biggerInput = !this.biggerInput;
     if (this.biggerInput) {

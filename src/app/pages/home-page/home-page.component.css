@@ -11,7 +11,7 @@
 
 /*********---- Media Queries ------ **********/
 
-@media (max-width: 376px) {
+@media (max-width: 400px) {
   .grid-area {
     grid-template-columns: 1fr;
     grid-template-areas: "aside";

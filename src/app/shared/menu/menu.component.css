@@ -118,7 +118,7 @@
   align-items: baseline;
   color: var(--colorLetra2);
   padding: 2px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
 
 }
@@ -173,7 +173,7 @@
   }
 
   .desplegarBoton svg {
-    width: 10%;
+    width: 15%;
   }
 
   .categoriasDesplegable {
@@ -202,7 +202,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .menuDesplegado {
@@ -223,7 +223,7 @@
     display: flex;
     justify-content: center;
   }
-/* TODO: arreglar spp-search responsive */
+
   .buscarDesplegable input {
     width: 100%;
     border: none;
@@ -265,7 +265,6 @@
 
   .btn-carritoDesplegable svg {
     color: var(--colorLetra1);
-    /* font-size: 1.3rem; */
     height: 25px;
   }
 
