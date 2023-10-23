@@ -1,6 +1,6 @@
 # Trendy Gear Ecommerce
 
-![Trendy Gear Logo](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura6.png)
+![Trendy Gear](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura6.png)
 
 Trendy Gear es un proyecto de ecommerce que he creado desde cero con el objetivo de aprender el proceso de creación de aplicaciones complejas paso a paso, desde el diseño y maquetado hasta el desarrollo final, pasando por la estructuración de módulos, componentes y servicios.
 
@@ -36,6 +36,27 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
 
 - **Despliegue:**
   - La aplicación está desplegada en [Netlify](https://ecommerce-amndev.netlify.app/) para su acceso en línea.
+
+
+## Capturas de Pantalla
+
+A continuación, se muestran algunas capturas de pantalla de Trendy Gear:
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura1.png)
+*Vista de producto en móvil y modo oscuro.*
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura2.png)
+*Vista de producto.*
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura3.png)
+*Vista de producto en móvil.*
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura4.png)
+*Vista de página de compra.*
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura5.png)
+*Vista de página de login.*
+
 
 ## Cómo Iniciar
 
