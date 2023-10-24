@@ -13,6 +13,7 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
 - Diseño y maquetado de interfaces de usuario atractivas utilizando Flexbox y Grid Layout.
 - Implementación de rutas principales y rutas hijas para una navegación clara.
 - Utilización de lazy loading para una carga eficiente de módulos.
+- Cancelación de subscripciones para una mejor gestión de la memoria.
 - Desarrollo de funcionalidad para añadir productos a la lista de compra.
 - Desarrollo de modo oscuro para mejorar la experiencia del usuario en entornos de poca luz.
 - Desarrollo de funcionalidad 'últimos productos vistos'.
@@ -31,7 +32,7 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
   - SweetAlert2 para notificaciones interactivas.
 
 - **Backend/API:**
-  - Consumo de la API pública FakeStoreAPI para datos de productos a través de peticiones HTTP GET.
+  - Consumo de la API pública FakeStoreAPI para datos de productos a través de peticiones HTTP GET/POST.
   - Respaldo de datos almacenado en GitHub.
 
 - **Despliegue:**
@@ -42,21 +43,21 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
 
 A continuación, se muestran algunas capturas de pantalla de Trendy Gear:
 
-![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura1.png)
-*Vista de producto en móvil y modo oscuro.*
 
-![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura2.png)
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura2.png)  
 *Vista de producto.*
 
-![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura3.png)
-*Vista de producto en móvil.*
-
-![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura4.png)
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura4.png)  
 *Vista de página de compra.*
 
-![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura5.png)
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura5.png)  
 *Vista de página de login.*
 
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura3.png)  
+*Vista de producto en móvil.*
+
+![Captura de Pantalla](https://github.com/AMNdev/eCommerce-Angular/blob/master/src/assets/screenshots/captura1.png)  
+*Vista de producto en móvil y modo oscuro.*
 
 ## Cómo Iniciar
 
@@ -66,7 +67,7 @@ Si deseas explorar el código fuente de Trendy Gear, sigue estos pasos:
 2. Navega al directorio del proyecto con `cd tu-repositorio`.
 3. Abre el proyecto en tu navegador web.
 
-Por favor, ten en cuenta que no es necesario un proceso de registro, ya que Trendy Gear utiliza una API pública de pruebas para obtener los datos de los productos a través de peticiones HTTP GET.
+No es necesario realizar un proceso de registro, ya que Trendy Gear utiliza una API pública de pruebas para obtener los datos de los productos a través de peticiones HTTP GET.
 
 
 ## Aprendizaje de Depuración

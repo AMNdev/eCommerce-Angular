@@ -46,7 +46,9 @@ export class ProductsService {
   }
 
   refreshLastSeen(product: Product) {
+
     if (!product) return;
+
     if (
       JSON.stringify(this.lastProductsSeen).includes(JSON.stringify(product))
     ) {
@@ -58,6 +60,10 @@ export class ProductsService {
 
     this.lastProductsSeen.unshift(product);
     if (this.lastProductsSeen.length >= 5) this.lastProductsSeen.splice(5);
+    this.sendLastSeen()
+  }
+
+  sendLastSeen() {
     this.lastProductsEmitter.emit(this.lastProductsSeen);
   }
 

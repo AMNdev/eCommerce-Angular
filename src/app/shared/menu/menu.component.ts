@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CategoryService } from 'src/app/services/category.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
@@ -7,11 +8,13 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
   categories: string[] = [];
   articlesNumber: number = 0;
   isSearchActive: boolean = false;
-  isDropDownVisible : boolean = false
+  isDropDownVisible: boolean = false;
+
+  private menuSuscription?: Subscription;
 
   constructor(
     private categoryService: CategoryService,
@@ -19,7 +22,7 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cartService.cartLengthEmitter.subscribe(
+    this.menuSuscription = this.cartService.cartLengthEmitter.subscribe(
       (num) => (this.articlesNumber = num)
     );
     this.categoryService.getCategories().subscribe((data) => {
@@ -29,11 +32,16 @@ export class MenuComponent implements OnInit {
     this.cartService.refreshCartLength();
   }
 
+  ngOnDestroy(): void {
+    console.log('menu unsbscribed');
+    this.menuSuscription?.unsubscribe()
+  }
+
   changeClass(event: boolean): void {
     this.isSearchActive = event;
   }
 
   showDropdown() {
-    this.isDropDownVisible = !this.isDropDownVisible
+    this.isDropDownVisible = !this.isDropDownVisible;
   }
 }
