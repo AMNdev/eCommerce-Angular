@@ -2,19 +2,23 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  HostListener,
+  OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject, debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   @ViewChild('txtSearchInput')
   public searchInput!: ElementRef<HTMLInputElement>;
+  private debouncer: Subject<string> = new Subject<string>();
 
   @Output()
   isSearchActive = new EventEmitter<boolean>();
@@ -22,31 +26,43 @@ export class SearchComponent {
 
   constructor(private router: Router) {}
 
-  search() {
-    const term = this.searchInput.nativeElement.value;
-    console.log(`Searching...${term}`);
-    this.changeInputVisibility();
-    this.searchInput.nativeElement.blur()
-
-    this.router.navigateByUrl(`/home/search/${term}`);
+  ngOnInit(): void {
+    this.debouncer
+      .pipe(debounceTime(900))
+      .subscribe((value) => {
+      this.search(value);
+    });
+    // suscripción al debouncer al crear el componente
   }
 
-  focusOnSearch() {
-    if (this.biggerInput && this.searchInput.nativeElement.value) return this.search();
-
-    this.changeInputVisibility();
+  onKeyPress(searchTerm: string) {
+    this.debouncer.next(searchTerm);
+  }
+  search(searchTerm: string) {
+    this.router.navigateByUrl(`/home/search/${searchTerm}`);
   }
 
   changeInputVisibility() {
     // vaciar el input
     this.searchInput.nativeElement.value = '';
 
-    this.isSearchActive.emit(!this.biggerInput);
     this.biggerInput = !this.biggerInput;
+    this.isSearchActive.emit(this.biggerInput);
     if (this.biggerInput) {
       this.searchInput.nativeElement.focus();
     } else {
-      this.searchInput.nativeElement.blur()
+      this.searchInput.nativeElement.blur();
     }
+  }
+
+  // observar el click fuera de la búsqueda
+  @HostListener('document:click', ['$event.target'])
+  clickedOut(e: HTMLElement) {
+    if (
+      this.biggerInput == true &&
+      e.id != 'searchButton' &&
+      e.id != 'searchInput'
+    )
+      this.changeInputVisibility();
   }
 }
