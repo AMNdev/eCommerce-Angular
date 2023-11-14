@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public user:string|null = localStorage.getItem('loggedUser')
+
+  constructor(){}
 
 }
