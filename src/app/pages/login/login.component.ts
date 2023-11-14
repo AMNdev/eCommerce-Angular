@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { catchError, of } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -14,6 +15,7 @@ import { JwtDecodeService } from 'src/app/services/jwt-decode.service';
 })
 export class LoginComponent {
   public formSubmitted = false;
+  public user?: string;
 
   public loginForm = this.fb.group({
     username: ['derek', Validators.required],
@@ -23,8 +25,12 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private loginService: LoginService,
-    private jwtDecode: JwtDecodeService
-  ) {}
+    private jwtDecode: JwtDecodeService,
+    private router: Router
+
+  ) {
+    this.user = localStorage.getItem('loggedUser')!;
+  }
 
   login() {
     this.formSubmitted = true;
@@ -44,7 +50,6 @@ export class LoginComponent {
         .subscribe((resp) => {
           if (resp.token) {
             const user = this.jwtDecode.decodeToken(resp.token).user;
-            this.loginService.setLoggedUser(user);
 
             Swal.fire({
               icon: 'success',
@@ -53,6 +58,9 @@ export class LoginComponent {
               Welcome, <b>${user}</b>.
               <br>
               Token: <i>${resp['token']}</i>`,
+            }).then(() => {
+              this.loginService.setLoggedUser(user);
+              this.redirectToHome()
             });
           } else {
             const errorResponse: ErrorResponse = resp;
@@ -71,5 +79,9 @@ export class LoginComponent {
   invalidField(campo: string): boolean {
     if (this.loginForm.get(campo)?.invalid && this.formSubmitted) return true;
     else return false;
+  }
+
+  redirectToHome() {
+    this.router.navigate(['/home']);
   }
 }

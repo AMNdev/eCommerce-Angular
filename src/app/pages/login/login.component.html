@@ -1,6 +1,6 @@
 <div class="contenedor">
 
-  <div class="form">
+  <div class="form" *ngIf="!user; else elseTemplate">
 
     <form (ngSubmit)="login()" autocomplete="off" [formGroup]="loginForm" id="loginForm">
 
@@ -19,5 +19,11 @@
       </ul>
     </form>
   </div>
-</div>
 
+  <ng-template #elseTemplate>
+    <div class="leaving">
+      <h3>Are you leaving, {{user}}?</h3>
+      <button class="logout">log out</button>
+    </div>
+  </ng-template>
+</div>

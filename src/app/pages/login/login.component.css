@@ -1,4 +1,4 @@
-.contenedor{
+.contenedor {
   background-color: var(--colorFondoPrincipal);
 
 }
@@ -43,3 +43,42 @@
 .invalid {
   border: 2px solid red;
 }
+
+.leaving {
+  height: 74vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaving h3 {
+  margin: 1vh;
+}
+
+.logout {
+  margin: 1rem auto;
+  width: 180px;
+  height: 50px;
+  background-color: var(--colorBadge);
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.logout:hover {
+  letter-spacing: 2px;
+  background: var(--color1);
+}
+
+.logout:active {
+  transform: translate(5px, 5px);
+  transition-duration: 0.3s;
+}
+
