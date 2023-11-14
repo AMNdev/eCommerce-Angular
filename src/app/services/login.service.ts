@@ -24,6 +24,7 @@ export class LoginService {
   }
 
   removeLoggedUser() {
+    this.isLogged = false;
     localStorage.removeItem('loggedUser');
   }
 }
