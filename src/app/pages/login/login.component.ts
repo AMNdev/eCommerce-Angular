@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import { LoginService } from 'src/app/services/login.service';
 import { ErrorResponse } from '../../interfaces/JSONresponse.interface';
 import { JwtDecodeService } from 'src/app/services/jwt-decode.service';
-import { JWT } from 'src/app/interfaces/JWT';
 
 @Component({
   selector: 'app-login',
@@ -45,6 +44,7 @@ export class LoginComponent {
         .subscribe((resp) => {
           if (resp.token) {
             const user = this.jwtDecode.decodeToken(resp.token).user;
+            this.loginService.setLoggedUser(user);
 
             Swal.fire({
               icon: 'success',

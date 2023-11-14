@@ -8,11 +8,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
+  private isLogged?: boolean;
 
   login(formData: LoginForm): Observable<JSONresponse> {
     const url = 'https://fakestoreapi.com/auth/login';
 
     return this.http.post<JSONresponse>(url, formData);
+  }
+
+  setLoggedUser(user: string) {
+    this.isLogged = true;
+    localStorage.setItem('loggedUser', user);
+  }
+
+  removeLoggedUser() {
+    localStorage.removeItem('loggedUser');
   }
 }
