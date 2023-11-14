@@ -18,7 +18,7 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
 - Desarrollo de modo oscuro para mejorar la experiencia del usuario en entornos de poca luz.
 - Desarrollo de funcionalidad 'últimos productos vistos'.
 - Almacenamiento persistente de datos en servicio y local storage.
-- Integración de autenticación segura mediante JSON Web Tokens (JWT).
+- Integración de autenticación segura mediante JSON Web Tokens (JWT) y obtención del usuario desde el token.
 
 
 ## Tecnologías Utilizadas
@@ -30,6 +30,7 @@ El propósito principal de Trendy Gear es servir como un proyecto de aprendizaje
   - Angular
   - RxJS
   - SweetAlert2 para notificaciones interactivas.
+  - jwt-decode para obtener el usuario
 
 - **Backend/API:**
   - Consumo de la API pública FakeStoreAPI para datos de productos a través de peticiones HTTP GET/POST.
