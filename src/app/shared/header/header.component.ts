@@ -11,7 +11,6 @@ export class HeaderComponent {
 
   constructor(loginService: LoginService) {
     loginService.loggedEmitter.subscribe((isLogged) => {
-      console.log(isLogged);
       this.user = isLogged;
     });
     loginService.emitLoggedUser();

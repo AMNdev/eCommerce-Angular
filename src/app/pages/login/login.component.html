@@ -23,7 +23,7 @@
   <ng-template #elseTemplate>
     <div class="leaving">
       <h3>Are you leaving, {{user}}?</h3>
-      <button class="logout">log out</button>
+      <button (click)="logOut()" class="logout">log out</button>
     </div>
   </ng-template>
 </div>

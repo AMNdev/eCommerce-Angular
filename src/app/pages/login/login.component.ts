@@ -84,4 +84,10 @@ export class LoginComponent {
   redirectToHome() {
     this.router.navigate(['/home']);
   }
+
+  logOut() {
+    console.log('logging out');
+    this.loginService.removeLoggedUser();
+    this.redirectToHome();
+  }
 }
