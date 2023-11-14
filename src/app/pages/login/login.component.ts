@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 
 import { LoginService } from 'src/app/services/login.service';
 import { ErrorResponse } from '../../interfaces/JSONresponse.interface';
+import { JwtDecodeService } from 'src/app/services/jwt-decode.service';
+import { JWT } from 'src/app/interfaces/JWT';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,11 @@ export class LoginComponent {
     password: ['jklg*_56', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private loginService: LoginService) {}
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private jwtDecode: JwtDecodeService
+  ) { }
 
   login() {
     this.formSubmitted = true;
@@ -38,10 +44,14 @@ export class LoginComponent {
         )
         .subscribe((resp) => {
           if (resp.token) {
+            const user = this.jwtDecode.decodeToken(resp.token).user;
+
             Swal.fire({
               icon: 'success',
               title: 'Login successful',
-              text: `${resp['token']}`,
+              text: `
+              Welcome, ${user}.
+              Token: ${resp['token']}`,
             });
           } else {
             const errorResponse: ErrorResponse = resp;
@@ -49,7 +59,7 @@ export class LoginComponent {
               icon: 'error',
               title: `Error ${errorResponse.status}: ${errorResponse.error}`,
               text: errorResponse.message,
-              
+
             });
           }
         });
