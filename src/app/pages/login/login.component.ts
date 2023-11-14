@@ -25,7 +25,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private loginService: LoginService,
     private jwtDecode: JwtDecodeService
-  ) { }
+  ) {}
 
   login() {
     this.formSubmitted = true;
@@ -49,9 +49,10 @@ export class LoginComponent {
             Swal.fire({
               icon: 'success',
               title: 'Login successful',
-              text: `
-              Welcome, ${user}.
-              Token: ${resp['token']}`,
+              html: `
+              Welcome, <b>${user}</b>.
+              <br>
+              Token: <i>${resp['token']}</i>`,
             });
           } else {
             const errorResponse: ErrorResponse = resp;
@@ -59,7 +60,6 @@ export class LoginComponent {
               icon: 'error',
               title: `Error ${errorResponse.status}: ${errorResponse.error}`,
               text: errorResponse.message,
-
             });
           }
         });
